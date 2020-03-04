@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { BlogComponent } from './blog/blog.component';
-import { RegitroComponent } from './regitro/regitro.component';
+import { RegistroComponent } from './registro/registro.component';
+import { ProductosComponent } from './productos/productos.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,11 +18,14 @@ import { RegitroComponent } from './regitro/regitro.component';
     MainComponent,
     CursosComponent,
     BlogComponent,
-    RegitroComponent
+    RegistroComponent,
+    ProductosComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
