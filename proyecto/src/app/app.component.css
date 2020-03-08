@@ -1,22 +1,87 @@
-.navbar {
-    background-color: rgb(51, 48, 48);
+* {
+    margin: 0;
 }
 
-.navbar-nav a {
+.navbar {
+    background: rgb(52, 128, 163);
+    height: 60px;
+    padding: 0 50px;
+}
+
+.navbar-nav {
     color: white;
     font-size: 1.3em;
 }
 
-.buscador {
-    width: 300px;
-    border-radius: 15px;
-    margin: 0 auto;
+.navbar .navbar-nav a {
+    margin: 0 15px;
+    color: white;
+}
+
+.navbar-collapse.show {
+    background: rgb(155, 208, 233);
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    color: black;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:focus,
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: transparent;
+}
+
+.form-control {
+    margin-right: 50px;
+    border-radius: 30px;
 }
 
 .btn {
+    color: rgb(233, 233, 243);
     border: blue;
+    font-size: 20px;
 }
 
 .iconos {
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.iconos i {
+    margin: 0 10px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: rgb(31, 30, 30);
+    text-align: center;
+    padding: 0;
+}
+
+footer .arrow a {
+    color: white;
+}
+
+footer .social {
+    list-style-type: none;
+}
+
+footer .row .social {
+    margin: 20px;
+}
+
+footer .social li {
+    display: inline;
+    margin: 20px 20px;
+}
+
+footer ul li a {
+    color: white;
+}
+
+.copy {
+    height: 50px;
+    background: rgb(17, 17, 17);
+    color: grey;
 }

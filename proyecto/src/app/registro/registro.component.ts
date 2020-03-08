@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,7 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+
+
+  constructor(private homeService: HomeService) {
+
+    this.formulario = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+      ]),
+      apellidos: new FormControl('', [
+        Validators.required,
+      ]),
+      email: new FormControl('', []),
+      password: new FormControl('', [])
+    })
+
+
+  }
+
+
+
+
 
   ngOnInit() {
   }
