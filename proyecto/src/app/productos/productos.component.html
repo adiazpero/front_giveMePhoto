@@ -5,100 +5,94 @@
         <h2>Filtro</h2>
         <h3 class="titulofiltro">Cámaras</h3>
         <ul class="filtros">
-            <li class="titulo">Marca</li>
+            <li class="tituloLi">Marca</li>
             <form method="get" action="">
 
-                <input name="Nikon" type="checkbox" />
+                <input name="nikon" value="nikon" type="checkbox" />
                 <span>Nikon</span>
 
-                <br />
+                <br>
 
-                <input name="Canon" type="checkbox" /><span>Canon</span>
+                <input name="canon" value="canon " type="checkbox" /><span>Canon</span>
 
-                <br />
+                <br>
 
-                <input name="Sony" type="checkbox" /><span>Sony</span>
+                <input name="sony" value="sony " type="checkbox" /><span>Sony</span>
 
-                <br />
+                <br>
 
-                <input name="Olympus" type="checkbox" /><span>Olympus</span>
-
-            </form>
-
-            <li class="titulo">Resolución</li>
-            <form method="get" action="">
-
-                <input value="6mp - 12mp" type="checkbox" /> <span>6mp - 12mp</span>
-
-                <br />
-
-                <input value="12mp - 16mp" type="checkbox" /><span>12mp - 16mp</span>
-
-                <br />
-
-                <input value="16mp - 20mp" type="checkbox" /><span>16mp - 20mp</span>
-
-                <br />
-
-                <input value="20mp - 26mp" type="checkbox" /><span>20mp - 26mp</span>
+                <input name="olympus" value="olympus " type="checkbox" /><span>Olympus</span>
 
             </form>
 
-            <li class="titulo">Iso</li>
+            <li class="tituloLi">Resolución</li>
             <form method="get" action="">
 
-                <input value="6400 - 12800" type="checkbox" /><span>
-                    < 6400</span>
+                <input value="6 - 12" type="checkbox" /> <span>6mp - 12mp</span>
 
-                        <br />
+                <br>
 
-                        <input value="12800 - 25600" type="checkbox" /><span>6400 - 12800</span>
+                <input value="12 - 16" type="checkbox" /><span>12mp - 16mp</span>
 
-                        <br />
+                <br>
 
-                        <input value=">25600" type="checkbox" /><span>12800 - 25600</span>
+                <input value="16 - 20" type="checkbox" /><span>16mp - 20mp</span>
 
-                        <br />
+                <br>
 
-                        <input value=">25600" type="checkbox" /><span>> 25600</span>
+                <input value="20 - 26" type="checkbox" /><span>20mp - 26mp</span>
+
+            </form>
+
+            <li class="tituloLi">Iso</li>
+            <form method="get" action="">
+                <input value="12800 - 25600" type="checkbox" /><span>6400 - 12800</span>
+
+                <br>
+
+                <input value=">25600" type="checkbox" /><span>12800 - 25600</span>
+
+                <br>
+
+                <input value=">25600" type="checkbox" /><span>> 25600</span>
 
             </form>
         </ul>
         <h3 class="titulofiltro">Objetivos</h3>
         <ul class="filtros">
-            <li class="titulo">Marca</li>
+            <li class="tituloLi">Marca</li>
             <form method="get" action="">
 
                 <input value="nikkor" type="checkbox" /><span> Nikkor</span>
 
-                <br />
+                <br>
 
                 <input value="canon" type="checkbox" /><span> Canon</span>
 
-                <br />
+                <br>
 
                 <input value="sony" type="checkbox" /><span> Sony</span>
 
-                <br />
+                <br>
 
                 <input value="olympus" type="checkbox" /><span> Olympus</span>
 
             </form>
 
-            <li class="titulo">Focal</li>
+            <li class="tituloLi">Focal</li>
             <form method="get" action="">
 
                 <input value="35" type="checkbox" /><span> 35 mm</span>
 
-                <br />
+                <br>
 
                 <input value="50" type="checkbox" /><span> 50 mm</span>
 
-                <br />
+                <br>
 
                 <input value="85" type="checkbox" /><span> 85 mm</span>
 
-                <br />
+                <br>
 
                 <input value="140" type="checkbox" /><span> > 140 mm</span>
 
@@ -106,16 +100,16 @@
         </ul>
         <h3 class="titulofiltro">Accesorios</h3>
         <ul class="filtros">
-            <li class="titulo">Marca</li>
+            <li class="tituloLi">Marca</li>
             <form method="get" action="">
 
                 <input value="k&f" type="checkbox" /><span>K&F</span>
 
-                <br />
+                <br>
 
                 <input value="manfroto" type="checkbox" /><span>Manfroto</span>
 
-                <br />
+                <br>
 
                 <input value="newer" type="checkbox" /><span>Newer</span>
 
@@ -137,8 +131,6 @@
 <div class="card-group float-right">
     <div>
         <div class="card ">
-            <a href="#" class="stretched-link"></a>
-            <div class="imagen"></div>
             <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/81E6bLCTYyL._SL1500_.jpg"
                 alt="Card image cap">
             <div class="card-body">
@@ -147,7 +139,6 @@
                     Bluetooth
                     + 18-55 mm f/3.5-5.6G</p>
                 <p class="card-text text-center"><small class="text-danger">350€</small></p>
-                <!-- CENTRAR Y NO FUNCIONA HOVER BOOTSTRAP -->
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -162,7 +153,6 @@
                 <p class="card-text text-center"> Cámara Réflex - Nikon D7500, 21 MP, 4K, WiFi, Bluetooth + Objetivo
                     AF-S 18-140mm f/3.5-5.6G ED VR</p>
                 <p class="card-text text-center"><small class="text-danger">300€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -177,7 +167,6 @@
                     24.2MP
                 </p>
                 <p class="card-text text-center"><small class="text-danger">295€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -193,7 +182,6 @@
                 <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">750€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -207,7 +195,6 @@
                 <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">550€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -221,7 +208,6 @@
                 <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">1200€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -237,7 +223,6 @@
                 <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">750€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -251,7 +236,6 @@
                 <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">550€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -265,7 +249,6 @@
                 <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">1200€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -281,7 +264,6 @@
                 <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">750€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -295,7 +277,6 @@
                 <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">550€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
@@ -309,7 +290,6 @@
                 <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
                     24.2MP</p>
                 <p class="card-text text-center"><small class="text-danger">1200€</small></p>
-                <a href="#" class="stretched-link"></a>
                 <button type="button" class="btn btn-outline-primary">Comprar</button>
             </div>
         </div>
