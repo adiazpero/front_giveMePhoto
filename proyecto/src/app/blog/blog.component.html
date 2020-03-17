@@ -1,1 +1,42 @@
 <p>blog works!</p>
+<!-- 
+<div class="container">
+
+    <div class="card-deck row">
+        <div class="col-12 col-md-3 offset-md-9">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text icono" for="inputGroupSelect01"><i class="fas fa-server"></i>
+                       </label>
+                </div>
+                <select id="inputGroupSelect01" class="custom-select custom-select-lg mb-3" (change)="filtrarCategoria($event)">
+                <option value="mostrarTodo">Todas</option>
+                <option value="naturaleza">Naturaleza</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="viaje">Viaje</option>
+                <option value="animales">Animales</option>
+                <option value="actualidad">Tecnicas</option>
+            </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-deck row">
+        <div class="col-12 col-md-6" *ngFor="let post of listaPosts">
+            <div class="card">
+                <img class="card-img-top" [src]="post.imagen" alt="">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{post.titulo}}</h5>
+                    <p class="card-text">{{post.texto}}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{post.autor}}{{post.fecha}}</small>
+                </div>
+            </div>
+            <button class="btn btn-block btn-sm" (click)="borrarPost(post.id)">ELIMINAR</button>
+        </div>
+    </div>
+
+</div> -->

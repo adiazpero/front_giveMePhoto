@@ -1,4 +1,4 @@
-<!-- FILTRO -->
+<!-- FILTRO por marca-->
 <div class="float-left">
     <div class="filtro">
         <hr>
@@ -7,105 +7,84 @@
         <ul class="filtros">
             <li class="tituloLi">Marca</li>
 
-            <input name="nikon" value="nikon" type="checkbox" id="nikon" (change)="manejarCheck($event)" /><span>Nikon</span>
+            <input name="marca" value="nikon" type="radio" id="nikon" (change)="manejarCheckMarca($event)" /><span>Nikon</span>
             <br>
-            <input name="canon" value="canon " type="checkbox" id="canon" /><span>Canon</span>
+            <input name="marca" value="canon " type="radio" id="canon" (change)="manejarCheckMarca($event)" /><span>Canon</span>
             <br>
-            <input name="sony" value="sony " type="checkbox" id="Sony" /><span>Sony</span>
+            <input name="marca" value="sony " type="radio" id="Sony" (change)="manejarCheckMarca($event)" /><span>Sony</span>
             <br>
-            <input name="olympus" value="olympus " type="checkbox" id="Olympus" /><span>Olympus</span>
+            <input name="marca" value="olympus " type="radio" id="Olympus" (change)="manejarCheckMarca($event)" /><span>Olympus</span>
 
 
             <li class="tituloLi">Resolución</li>
-            <form method="get" action="">
 
-                <input value="6 - 12" type="checkbox" /> <span>6mp - 12mp</span>
+            <input value="0" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /> <span>12mp - 16mp</span>
+            <br>
+            <input value="1" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>20mp - 24mp</span>
+            <br>
+            <input value="2" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>>35</span>
 
-                <br>
-
-                <input value="12 - 16" type="checkbox" /><span>12mp - 16mp</span>
-
-                <br>
-
-                <input value="16 - 20" type="checkbox" /><span>16mp - 20mp</span>
-
-                <br>
-
-                <input value="20 - 26" type="checkbox" /><span>20mp - 26mp</span>
-
-            </form>
 
             <li class="tituloLi">Iso</li>
-            <form method="get" action="">
-                <input value="12800 - 25600" type="checkbox" /><span>6400 - 12800</span>
 
-                <br>
+            <input value="0" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>6400 - 12800</span>
+            <br>
+            <input value="1" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>25600 - 51300</span>
+            <br>
+            <input value="2" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>> 100.000</span>
 
-                <input value=">25600" type="checkbox" /><span>12800 - 25600</span>
-
-                <br>
-
-                <input value=">25600" type="checkbox" /><span>> 25600</span>
-
-            </form>
         </ul>
+
+        <!-- Filtro Objetivos -->
+
+
+
         <h3 class="titulofiltro">Objetivos</h3>
         <ul class="filtros">
+
             <li class="tituloLi">Marca</li>
-            <form method="get" action="">
 
-                <input value="nikkor" type="checkbox" /><span> Nikkor</span>
+            <input value="nikkor" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span> Nikkor</span>
+            <br>
+            <input value="canon" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span> Canon</span>
+            <br>
+            <input value="sony" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span> Sony</span>
+            <br>
+            <input value="olympus" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span> Olympus</span>
 
-                <br>
 
-                <input value="canon" type="checkbox" /><span> Canon</span>
-
-                <br>
-
-                <input value="sony" type="checkbox" /><span> Sony</span>
-
-                <br>
-
-                <input value="olympus" type="checkbox" /><span> Olympus</span>
-
-            </form>
 
             <li class="tituloLi">Focal</li>
-            <form method="get" action="">
 
-                <input value="35" type="checkbox" /><span> 35 mm</span>
+            <input value="35" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span> 35 mm</span>
+            <br>
+            <input value="50" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span> 50 mm</span>
+            <br>
+            <input value="85" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span> 85 mm</span>
+            <br>
+            <input value="140" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span> > 140 mm</span>
 
-                <br>
-
-                <input value="50" type="checkbox" /><span> 50 mm</span>
-
-                <br>
-
-                <input value="85" type="checkbox" /><span> 85 mm</span>
-
-                <br>
-
-                <input value="140" type="checkbox" /><span> > 140 mm</span>
-
-            </form>
         </ul>
+
+
+
+
+        <!-- filtro por accesorios -->
+
         <h3 class="titulofiltro">Accesorios</h3>
         <ul class="filtros">
             <li class="tituloLi">Marca</li>
-            <form method="get" action="">
 
-                <input value="k&f" type="checkbox" /><span>K&F</span>
+            <input value="k&f" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>K&F</span>
+            <br>
+            <input value="manfroto" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Manfroto</span>
+            <br>
+            <input value="newer" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Newer</span>
 
-                <br>
-
-                <input value="manfroto" type="checkbox" /><span>Manfroto</span>
-
-                <br>
-
-                <input value="newer" type="checkbox" /><span>Newer</span>
-
-            </form>
         </ul>
+
+
+
         <h3 class="titulofiltro">Rango de precio</h3>
         <ul class="filtros">
             <section class="range-slider">
@@ -116,6 +95,7 @@
         </ul>
     </div>
 </div>
+
 
 <!-- PRODUCTOS -->
 <h2 class="tituloseccion">Cámaras</h2>

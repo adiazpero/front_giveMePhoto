@@ -29,8 +29,29 @@ export class ProductosService {
 
 
   getByMarca(pMarca): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/${pMarca}`).toPromise();
+    return this.httpClient.get(`${this.baseUrl}/marca/${pMarca}`).toPromise();
   }
 
+
+  getByResolucion(pResMin, pResMax): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/resolucion/${pResMin}/${pResMax}`).toPromise();
+  }
+
+
+  getByIso(pIsoMin, pIsoMax): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/iso/${pIsoMin}/${pIsoMax}`).toPromise();
+  }
+
+
+
+  getByMarcaObjetivo(pMarca): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/marcaObjetivo/${pMarca}`).toPromise();
+  }
+
+
+
+  getByFocal(pFocalMin, pFocalMax): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/focal/${pFocalMin}/${pFocalMax}`).toPromise();
+  }
 
 }

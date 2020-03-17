@@ -42,15 +42,106 @@ export class ProductosComponent implements OnInit {
 
 
 
-  async manejarCheck($event) {
+  async manejarCheckMarca($event) {
     const response = await this.productosService.getByMarca($event.target.value);
     this.producto = response;
-    console.log(response)
-    //console.log($event.target.value)
-    /* this.productosService.getByMarca() */
+    // console.log(response)
   }
 
 
+  async manejarCheckResolucion($event) {
+    var response = [];
+    switch (parseInt($event.target.value)) {
+      case 0:
+        response = await this.productosService.getByResolucion(12, 17);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      case 1:
+        response = await this.productosService.getByResolucion(18, 25);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      case 2:
+        response = await this.productosService.getByResolucion(30, 36);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      default:
+        response = await this.productosService.getAll();
+        this.producto = response;
+    };
+  }
+
+
+
+
+  async manejarCheckIso($event) {
+    var response = [];
+    switch (parseInt($event.target.value)) {
+      case 0:
+        response = await this.productosService.getByIso(6300, 12900);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      case 1:
+        response = await this.productosService.getByIso(25500, 51300);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      case 2:
+        response = await this.productosService.getByIso(100000, 521300);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      default:
+        response = await this.productosService.getAll();
+        this.producto = response;
+    };
+  }
+
+
+
+  async manejarCheckMarcaObjetivo($event) {
+    const response = await this.productosService.getByMarca($event.target.value);
+    this.producto = response;
+    // console.log(response)
+  }
+
+
+
+  async manejarCheckFocal($event) {
+    var response = [];
+    switch (parseInt($event.target.value)) {
+      case 0:
+        response = await this.productosService.getByFocal(6300, 12900);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      case 1:
+        response = await this.productosService.getByFocal(25500, 51300);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      case 2:
+        response = await this.productosService.getByFocal(100000, 521300);
+        this.producto = response;
+        console.log(response);
+        break;
+
+      default:
+        response = await this.productosService.getAll();
+        this.producto = response;
+    };
+  }
 
 
 
