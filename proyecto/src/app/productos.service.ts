@@ -45,7 +45,7 @@ export class ProductosService {
 
 
   getByMarcaObjetivo(pMarca): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/marcaObjetivo/${pMarca}`).toPromise();
+    return this.httpClient.get(`${this.baseUrl}/marca/objetivo/${pMarca}`).toPromise();
   }
 
 

@@ -106,10 +106,10 @@ export class ProductosComponent implements OnInit {
     };
   }
 
-
+  //Pendiente comprobacion
 
   async manejarCheckMarcaObjetivo($event) {
-    const response = await this.productosService.getByMarca($event.target.value);
+    const response = await this.productosService.getByMarcaObjetivo($event.target.value);
     this.producto = response;
     // console.log(response)
   }
@@ -120,19 +120,19 @@ export class ProductosComponent implements OnInit {
     var response = [];
     switch (parseInt($event.target.value)) {
       case 0:
-        response = await this.productosService.getByFocal(6300, 12900);
+        response = await this.productosService.getByFocal(15, 24);
         this.producto = response;
         console.log(response);
         break;
 
       case 1:
-        response = await this.productosService.getByFocal(25500, 51300);
+        response = await this.productosService.getByFocal(23, 50);
         this.producto = response;
         console.log(response);
         break;
 
       case 2:
-        response = await this.productosService.getByFocal(100000, 521300);
+        response = await this.productosService.getByFocal(49, 86);
         this.producto = response;
         console.log(response);
         break;
