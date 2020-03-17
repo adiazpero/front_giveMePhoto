@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ProductosComponent implements OnInit {
 
-  producto: any;
+  productos: any[];
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router) {
@@ -33,9 +32,9 @@ export class ProductosComponent implements OnInit {
 
     //Productos: filtrar por categorias => camaras/objetivos/accesorios
     this.activatedRoute.params.subscribe(async params => {
-      console.log(params)
+      //console.log(params)
       const response = await this.productosService.getByCategoria(params.categoria);
-      this.producto = response;
+      this.productos = response;
       console.log(response)
     });
   }
@@ -44,8 +43,8 @@ export class ProductosComponent implements OnInit {
 
   async manejarCheckMarca($event) {
     const response = await this.productosService.getByMarca($event.target.value);
-    this.producto = response;
-    // console.log(response)
+    this.productos = response;
+    //console.log(response)
   }
 
 
@@ -54,25 +53,25 @@ export class ProductosComponent implements OnInit {
     switch (parseInt($event.target.value)) {
       case 0:
         response = await this.productosService.getByResolucion(12, 17);
-        this.producto = response;
+        this.productos = response;
         console.log(response);
         break;
 
       case 1:
         response = await this.productosService.getByResolucion(18, 25);
-        this.producto = response;
+        this.productos = response;
         console.log(response);
         break;
 
       case 2:
         response = await this.productosService.getByResolucion(30, 36);
-        this.producto = response;
+        this.productos = response;
         console.log(response);
         break;
 
       default:
         response = await this.productosService.getAll();
-        this.producto = response;
+        this.productos = response;
     };
   }
 
@@ -84,25 +83,25 @@ export class ProductosComponent implements OnInit {
     switch (parseInt($event.target.value)) {
       case 0:
         response = await this.productosService.getByIso(6300, 12900);
-        this.producto = response;
+        this.productos = response;
         console.log(response);
         break;
 
       case 1:
         response = await this.productosService.getByIso(25500, 51300);
-        this.producto = response;
+        this.productos = response;
         console.log(response);
         break;
 
       case 2:
         response = await this.productosService.getByIso(100000, 521300);
-        this.producto = response;
+        this.productos = response;
         console.log(response);
         break;
 
       default:
         response = await this.productosService.getAll();
-        this.producto = response;
+        this.productos = response;
     };
   }
 
@@ -110,7 +109,7 @@ export class ProductosComponent implements OnInit {
 
   async manejarCheckMarcaObjetivo($event) {
     const response = await this.productosService.getByMarcaObjetivo($event.target.value);
-    this.producto = response;
+    this.productos = response;
     // console.log(response)
   }
 
@@ -120,26 +119,26 @@ export class ProductosComponent implements OnInit {
     var response = [];
     switch (parseInt($event.target.value)) {
       case 0:
-        response = await this.productosService.getByFocal(15, 24);
-        this.producto = response;
+        response = await this.productosService.getByFocal(15, 25);
+        this.productos = response;
         console.log(response);
         break;
 
       case 1:
-        response = await this.productosService.getByFocal(23, 50);
-        this.producto = response;
+        response = await this.productosService.getByFocal(25, 51);
+        this.productos = response;
         console.log(response);
         break;
 
       case 2:
-        response = await this.productosService.getByFocal(49, 86);
-        this.producto = response;
+        response = await this.productosService.getByFocal(52, 86);
+        this.productos = response;
         console.log(response);
         break;
 
       default:
         response = await this.productosService.getAll();
-        this.producto = response;
+        this.productos = response;
     };
   }
 
