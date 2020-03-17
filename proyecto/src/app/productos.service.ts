@@ -23,5 +23,14 @@ export class ProductosService {
 
 
 
+  getByCategoria(pCategoria): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/${pCategoria}`).toPromise();
+  }
+
+
+  getByMarca(pMarca): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/${pMarca}`).toPromise();
+  }
+
 
 }
