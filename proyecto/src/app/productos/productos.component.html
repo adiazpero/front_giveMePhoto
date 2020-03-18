@@ -129,19 +129,49 @@
             <div class="card-group float-right">
                 <div *ngFor="let producto of productos">
                     <div class="card col-lg-12">
-                        <img class="card-img-top" [src]="producto.imagen1" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{producto.marca}} {{producto.modelo}}</h5>
-                            <p class="card-text text-center"> Cámara réflex - {{producto.resolucion}}MP, Full
-                                HD,</p>
-                            <p class="card-text text-center"><small class="text-danger">{{producto.precio}}€</small></p>
-                            <button type="button" class="btn btn-outline-primary">Comprar</button>
+                        <div class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img [src]="producto.imagen1" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img [src]="producto.imagen2" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img [src]="producto.imagen3" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button"
+                                    data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade" role="button"
+                                    data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                            <!-- <img class="card-img-top" [src]="producto.imagen1" alt="Card image cap"> -->
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{producto.marca}} {{producto.modelo}}</h5>
+                                <p class="card-text text-center"><span class="negrita">Categoria:
+                                    </span>{{producto.categoria}}<span class="negrita">Resolución:
+                                    </span>{{producto.resolucion}}<span class="negrita">Peso:
+                                    </span>{{producto.peso}}<span class="negrita">Focal: </span>{{producto.focal}}<span
+                                        class="negrita">Altura: </span>{{producto.altura}}</p>
+                                <p class="card-text text-center"><span class="negrita">Precio: </span><small
+                                        class="text-danger">{{producto.precio}}€</small>
+                                </p>
+                                <button type="button" class="btn btn-outline-primary">Comprar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91%2BBDENUjUL._SL1500_.jpg"
@@ -156,7 +186,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/81OXkfWNa3L._SL1500_.jpg"
@@ -172,7 +202,7 @@
                 </div>
             </div>
         </div> -->
-        <!--         <div class="card-group float-right">
+            <!--         <div class="card-group float-right">
             <div>
                 <div class="card">
                     <img class="card-img-top"
@@ -188,7 +218,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/718wPji6vSL._SL1500_.jpg"
@@ -203,7 +233,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91re8M%2BtB-L._SL1500_.jpg"
@@ -219,7 +249,7 @@
                 </div>
             </div>
         </div> -->
-        <!--         <div class="card-group float-right">
+            <!--         <div class="card-group float-right">
             <div>
                 <div class="card">
                     <img class="card-img-top"
@@ -235,7 +265,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/718wPji6vSL._SL1500_.jpg"
@@ -250,7 +280,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51T%2BPr5F9JL.jpg"
                         alt="Card image cap">
@@ -265,7 +295,7 @@
                 </div>
             </div>
         </div> -->
-        <!--         <div class="card-group float-right">
+            <!--         <div class="card-group float-right">
             <div>
                 <div class="card">
                     <img class="card-img-top"
@@ -281,7 +311,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91Qro4jz5yL._SL1500_.jpg"
@@ -296,7 +326,7 @@
                     </div>
                 </div>
             </div> -->
-        <!--             <div>
+            <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91vN5YilrvL._SL1500_.jpg"
@@ -311,5 +341,5 @@
                     </div>
                 </div>
             </div> -->
+        </div>
     </div>
-</div>
