@@ -11,6 +11,7 @@ export class ProductosService {
   baseUrl: string;
 
 
+
   constructor(private httpClient: HttpClient) {
     this.baseUrl = 'http://localhost:3000/api/productos';
   }
@@ -45,13 +46,21 @@ export class ProductosService {
 
 
   getByMarcaObjetivo(pMarca): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/marca/objetivo/${pMarca}`).toPromise();
+    return this.httpClient.get(`${this.baseUrl}/marca/objetivos/${pMarca}`).toPromise();
   }
 
 
 
   getByFocal(pFocalMin, pFocalMax): Promise<any> {
     return this.httpClient.get(`${this.baseUrl}/focal/${pFocalMin}/${pFocalMax}`).toPromise();
+  }
+
+  getByAccesorios(pMarca): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/marca/${pMarca}`).toPromise();
+  }
+
+  getByPrecio(pPrecioMin, pPrecioMax): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/precio/${pPrecioMin}/${pPrecioMax}`).toPromise();
   }
 
 }

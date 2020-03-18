@@ -20,23 +20,28 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit() {
     //Productos => ver todos
-    this.productosService.getAll()
-      .then(response => {
-        console.log(response);
-      })
-      .catch(err => {
-        console.log(err)
-      });
+
+    /*       const response =  this.productosService.getAll();
+          this.productos = response;
+          console.log(response)
+       */
 
 
 
     //Productos: filtrar por categorias => camaras/objetivos/accesorios
     this.activatedRoute.params.subscribe(async params => {
-      //console.log(params)
-      const response = await this.productosService.getByCategoria(params.categoria);
-      this.productos = response;
-      console.log(response)
+      console.log(params)
+      if (!params.categoria) {
+        const response = await this.productosService.getAll();
+        this.productos = response;
+      } else {
+        const response = await this.productosService.getByCategoria(params.categoria);
+        this.productos = response;
+      }
+
     });
+
+
   }
 
 
@@ -105,12 +110,11 @@ export class ProductosComponent implements OnInit {
     };
   }
 
-  //Pendiente comprobacion
 
-  async manejarCheckMarcaObjetivo($event) {
+  async manejarCheckObjetivo($event) {
     const response = await this.productosService.getByMarcaObjetivo($event.target.value);
     this.productos = response;
-    // console.log(response)
+    console.log(response)
   }
 
 
@@ -142,7 +146,44 @@ export class ProductosComponent implements OnInit {
     };
   }
 
+  async manejarCheckAccesorios($event) {
+    const response = await this.productosService.getByAccesorios($event.target.value);
+    this.productos = response;
+    console.log(response)
+  }
 
+  async manejarCheckPrecio($event) {
+    var response = [];
+    switch (parseInt($event.target.value)) {
+      case 0:
+        response = await this.productosService.getByPrecio(10, 251);
+        this.productos = response;
+        console.log(response);
+        break;
+
+      case 1:
+        response = await this.productosService.getByPrecio(275, 501);
+        this.productos = response;
+        console.log(response);
+        break;
+
+      case 2:
+        response = await this.productosService.getByPrecio(550, 1001);
+        this.productos = response;
+        console.log(response);
+        break;
+
+      case 3:
+        response = await this.productosService.getByPrecio(1100, 2100);
+        this.productos = response;
+        console.log(response);
+        break;
+
+      default:
+        response = await this.productosService.getAll();
+        this.productos = response;
+    };
+  }
 
 
 }

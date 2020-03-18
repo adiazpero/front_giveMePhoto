@@ -5,7 +5,7 @@
 /* FILTRO */
 
 .filtro{
-    width:350px;
+    width:300px;
     height: 1400px;
     background-color: rgb(51,48,48);
     margin: 0.8em;
@@ -55,8 +55,8 @@ span{
 
 /* PRODUCTOS */
 
-.productos{
-    margin-right: 6em;
+.row{
+    padding-left: 6em;
 }
 .card img{
     width:200px;
@@ -74,7 +74,7 @@ span{
     font-size: 1.2em;
 }
 .btn{
-    margin-left: 90px;
+    margin-left: 75px;
 }
 
 

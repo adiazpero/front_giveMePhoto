@@ -1,4 +1,3 @@
-<!-- FILTRO por marca-->
 <div class="pagina">
     <div class="float-left">
         <div class="filtro">
@@ -52,16 +51,17 @@
 
                 <li class="tituloLi">Marca</li>
 
-                <input value="0" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                <input value="nikkor" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Nikkor</span>
                 <br>
-                <input value="1" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                <input value="canon" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Canon</span>
                 <br>
-                <input value="2" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                <input value="sony" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Sony</span>
                 <br>
-                <input value="3" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                <input value="olympus" type="radio" name="marcaObjetivo"
+                    (change)="manejarCheckObjetivo($event)" /><span>
                     Olympus</span>
 
 
@@ -99,11 +99,23 @@
 
             <h3 class="titulofiltro">Rango de precio</h3>
             <ul class="filtros">
-                <section class="range-slider">
+                <input value="0" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>10 - 250 €
+                </span>
+                <br>
+                <input value="1" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>275 - 500
+                    €</span>
+                <br>
+                <input value="2" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 550-1000
+                    €</span>
+                <br>
+                <input value="3" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 1200 - 2500
+                    €</span>
+
+                <!-- <section class="range-slider">
                     <span class="rangeValues"></span>
                     <input value="0" min="0" max="1000" step="100" type="range">
                     <input value="2500" min="1050" max="2500" step="100" type="range">
-                </section>
+                </section> -->
             </ul>
         </div>
     </div>
@@ -112,24 +124,24 @@
     <!-- PRODUCTOS -->
 
     <div class="productos">
-        <h2 class="tituloseccion">Cámaras</h2>
-        <div class="card-group float-right">
-            <div>
-                <div class="card ">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/81E6bLCTYyL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Nikon D3500</h5>
-                        <p class="card-text text-center"> Cámara réflex - Nikon D3500, Sensor CMOS, 24.2 MP, Full HD,
-                            Bluetooth + 18-55 mm f/3.5-5.6G</p>
-                        <p class="card-text text-center"><small class="text-danger">350€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
+        <div class="row">
+            <h2 class="tituloseccion">Cámaras</h2>
+            <div class="card-group float-right">
+                <div *ngFor="let producto of productos">
+                    <div class="card col-lg-12">
+                        <img class="card-img-top" [src]="producto.imagen1" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{producto.marca}} {{producto.modelo}}</h5>
+                            <p class="card-text text-center"> Cámara réflex - {{producto.resolucion}}MP, Full
+                                HD,</p>
+                            <p class="card-text text-center"><small class="text-danger">{{producto.precio}}€</small></p>
+                            <button type="button" class="btn btn-outline-primary">Comprar</button>
+                        </div>
                     </div>
                 </div>
-
             </div>
-            <div>
+        </div>
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91%2BBDENUjUL._SL1500_.jpg"
@@ -143,8 +155,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/81OXkfWNa3L._SL1500_.jpg"
@@ -159,8 +171,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-group float-right">
+        </div> -->
+        <!--         <div class="card-group float-right">
             <div>
                 <div class="card">
                     <img class="card-img-top"
@@ -175,8 +187,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/718wPji6vSL._SL1500_.jpg"
@@ -190,8 +202,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91re8M%2BtB-L._SL1500_.jpg"
@@ -206,8 +218,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-group float-right">
+        </div> -->
+        <!--         <div class="card-group float-right">
             <div>
                 <div class="card">
                     <img class="card-img-top"
@@ -222,8 +234,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/718wPji6vSL._SL1500_.jpg"
@@ -237,8 +249,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51T%2BPr5F9JL.jpg"
                         alt="Card image cap">
@@ -252,8 +264,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-group float-right">
+        </div> -->
+        <!--         <div class="card-group float-right">
             <div>
                 <div class="card">
                     <img class="card-img-top"
@@ -268,8 +280,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91Qro4jz5yL._SL1500_.jpg"
@@ -283,8 +295,8 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-            <div>
+            </div> -->
+        <!--             <div>
                 <div class="card">
                     <img class="card-img-top"
                         src="https://images-na.ssl-images-amazon.com/images/I/91vN5YilrvL._SL1500_.jpg"
@@ -298,7 +310,6 @@
                         <button type="button" class="btn btn-outline-primary">Comprar</button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
     </div>
 </div>
