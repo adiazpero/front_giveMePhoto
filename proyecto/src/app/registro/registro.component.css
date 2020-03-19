@@ -6,29 +6,29 @@
 .login {
     text-align: center;
     padding: 30px 0;
-    box-shadow: 5px 5px 15px #888888;
+    box-shadow: 5px 5px 15px #5f5e5e;
 }
 
 .register {
-    background: cornflowerblue;
+    background: rgba(245, 241, 241, 0.897);
     border-radius: 3px;
     text-align: center;
     padding: 30px 0;
-    box-shadow: 5px 5px 15px #888888;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 .login h3 {
-    background: cornflowerblue;
+    background: rgb(97, 96, 96);
     width: 70%;
     height: 70px;
     color: white;
     margin-bottom: 20px;
     padding-top: 15px;
-    box-shadow: 5px 5px 15px #888888;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 .register h3 {
-    color: white;
+    color: rgb(109, 101, 101);
 }
 
 .register input,
