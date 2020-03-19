@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 @Component({

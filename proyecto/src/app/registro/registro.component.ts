@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HomeService } from '../home.service';
+import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -9,13 +10,15 @@ import { HomeService } from '../home.service';
 })
 export class RegistroComponent implements OnInit {
 
-  formulario: FormGroup;
+  formRegistro: FormGroup;
+  formLogin: FormGroup;
+  errores: any[];
 
+  constructor(private usuarioService: UsuarioService, private router: Router) {
 
-  constructor(private homeService: HomeService) {
-
-    this.formulario = new FormGroup({
-      name: new FormControl('', [
+    //REGISTRO
+    this.formRegistro = new FormGroup({
+      nombre: new FormControl('', [
         Validators.required,
       ]),
       apellidos: new FormControl('', [
@@ -23,16 +26,35 @@ export class RegistroComponent implements OnInit {
       ]),
       email: new FormControl('', []),
       password: new FormControl('', [])
-    })
+    });
 
+    //LOGIN
+    this.formLogin = new FormGroup({
+      username: new FormControl('', []),
+      password: new FormControl('', []),
 
+    });
   }
-
-
-
 
 
   ngOnInit() {
   }
+
+
+  async onSubmitRegistro() {
+    await this.usuarioService.createUser(this.formRegistro.value)
+    this.router.navigate(['/main']);
+  }
+
+
+  onSubmitLogin() {
+    console.log(this.formLogin.value)
+
+  }
+
+
+
+
+
 
 }

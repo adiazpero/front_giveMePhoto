@@ -1,29 +1,47 @@
 <div class="caja container">
-
     <div class="row">
-
-        <div class="col-12 col-md-6 login">
-            <h3>ACCEDER A CUENTA</h3>
-            <form action="">
-                <input class="usuario" type="text" placeholder="usuario..." name="usuario"><br>
-                <input type="password" placeholder="contraseña..." name="contraseña"><br>
-                <button class="btn btn-primary">ACCEDER</button>
-                <p></p>
-            </form>
-        </div>
 
         <div class="col-12 col-md-6 register">
             <h3>REGISTRATE</h3>
-            <form action="" class="">
-                <input class="nombre" type="text" placeholder="nombre" name="nombre"><br>
-                <input type="text" placeholder="apellidos" name="apellidos"><br>
-                <input type="text" placeholder="email" name="email"><br>
-                <input type="password" placeholder="contraseña" name="contraseña"><br>
-                <input type="password" placeholder="repite tu contraseña" name=""><br>
+            <form [formGroup]="formRegistro" (ngSubmit)="onSubmitRegistro()">
+                <div>
+                    <input type="text" placeholder="nombre" name="nombre" formControlName="nombre">
+                </div>
+                <div>
+                    <input type="text" placeholder="apellidos" name="apellidos" formControlName="apellidos">
+                </div>
+                <div>
+                    <input type="text" placeholder="email" name="email" formControlName="email">
+                </div>
+                <div>
+                    <input type="password" placeholder="contraseña" name="contraseña" formControlName="password">
+                </div>
+                <div>
+                    <input type="password" placeholder="repite tu contraseña" name="repitecontraseña" formControlName="password">
+                </div>
 
-                <button class="btn btn-primary">ACCEDER</button>
+                <div>
+                    <input type="submit" class="btn btn-primary" value="acceder">
+                </div>
             </form>
         </div>
+
+
+        <div class="col-12 col-md-6 login">
+            <h3>ACCEDER A CUENTA</h3>
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
+                <div>
+                    <input class="usuario" type="text" placeholder="email@..." name="usuario" formControlName="username">
+                </div>
+                <div>
+                    <input type="password" placeholder="contraseña..." name="contraseña" formControlName="password">
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" value="acceder">
+                </div>
+            </form>
+        </div>
+
 
     </div>
 </div>
