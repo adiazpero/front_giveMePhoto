@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-<<<<<<< HEAD
-=======
-
->>>>>>> featured_apiProductos
-
 
 @Component({
   selector: 'app-productos',
