@@ -3,23 +3,23 @@
 }
 
 .navbar {
-    background: rgb(52, 128, 163);
-    height: 60px;
+    background: rgb(240, 243, 243);
+    height: 80px;
     padding: 0 50px;
 }
 
 .navbar-nav {
     color: white;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .navbar .navbar-nav a {
     margin: 0 15px;
-    color: white;
+    color: black;
 }
 
 .navbar-collapse.show {
-    background: rgb(155, 208, 233);
+    background: rgb(202, 212, 216);
 }
 
 .navbar-nav .nav-item .dropdown-menu .dropdown-item {
@@ -37,7 +37,7 @@
 }
 
 .btn {
-    color: rgb(233, 233, 243);
+    color: rgb(56, 56, 63);
     border: blue;
     font-size: 20px;
 }
