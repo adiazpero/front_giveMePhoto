@@ -165,7 +165,8 @@
                                 <p class="card-text text-center"><span class="negrita">Precio: </span><small
                                         class="text-danger">{{producto.precio}}€</small>
                                 </p>
-                                <button type="button" class="btn btn-outline-primary">Comprar</button>
+                                <button class="btn btn-outline-primary"
+                                    (click)="enviarProducto(producto)">Comprar</button>
                             </div>
                         </div>
                     </div>

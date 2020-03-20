@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,12 +10,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductosComponent implements OnInit {
 
   productos: any[];
+  @Output() productoSeleccionado: EventEmitter<[]>;
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router) {
+    this.productoSeleccionado = new EventEmitter();
 
   }
 
+  anyFunction() {
+    console.log('llamada desde el padre')
+  }
 
   ngOnInit() {
     //Productos => ver todos
@@ -43,6 +48,9 @@ export class ProductosComponent implements OnInit {
 
   }
 
+  enviarProducto(producto) {
+    this.productoSeleccionado.emit(producto);
+  }
 
 
   async manejarCheckMarca($event) {

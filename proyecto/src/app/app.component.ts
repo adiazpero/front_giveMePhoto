@@ -6,5 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto';
+
+  arrPedido: any;
+
+  constructor() {
+    this.arrPedido = [];
+
+  }
+
+  onActivate(componentReference) {
+    console.log('pagina que está activa', componentReference)
+    componentReference.anyFunction();
+
+    //recogemos el producto
+    componentReference.productoSeleccionado.subscribe((producto) => {
+      console.log('producto que recibe el padre', producto)
+      this.arrPedido.push(producto);
+    })
+
+
+
+
+
+  }
 }

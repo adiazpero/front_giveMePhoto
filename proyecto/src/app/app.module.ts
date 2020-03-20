@@ -11,6 +11,7 @@ import { CursosComponent } from './cursos/cursos.component';
 import { BlogComponent } from './blog/blog.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ProductosComponent } from './productos/productos.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 
@@ -22,6 +23,7 @@ import { ProductosComponent } from './productos/productos.component';
     BlogComponent,
     RegistroComponent,
     ProductosComponent,
+    CarritoComponent,
 
   ],
   imports: [
