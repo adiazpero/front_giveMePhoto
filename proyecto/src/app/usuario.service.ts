@@ -12,6 +12,7 @@ export class UsuarioService {
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/users";
 
+    // this.arrPost.push(JSON.parse(localStorage.getItem('post')))
   }
 
 
@@ -19,6 +20,11 @@ export class UsuarioService {
     return this.httpClient.post(`${this.baseUrl}/registro`, formvalue).toPromise();
   }
 
+
+  loginUser(formvalue) {
+    return this.httpClient.post(`${this.baseUrl}/login`, formvalue).toPromise();
+    //localStorage.setItem('post', JSON.stringify(this.arrPost))
+  }
 
 
 }

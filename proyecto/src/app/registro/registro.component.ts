@@ -30,7 +30,7 @@ export class RegistroComponent implements OnInit {
 
     //LOGIN
     this.formLogin = new FormGroup({
-      username: new FormControl('', []),
+      email: new FormControl('', []),
       password: new FormControl('', []),
 
     });
@@ -49,7 +49,11 @@ export class RegistroComponent implements OnInit {
 
   onSubmitLogin() {
     console.log(this.formLogin.value)
-
+    this.usuarioService.loginUser(this.formLogin.value)
+      .then(response => {
+        console.log(response['success']);
+      })
+    this.router.navigate(['/main']);
   }
 
 

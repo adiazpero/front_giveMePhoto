@@ -32,6 +32,7 @@
 
                 <div>
                     <input type="submit" class="btn btn-primary" value="acceder">
+                    <!--  <p>*La contraseña debe tener 8 o más caracteres y debe contener al menos un número, una letra en minúscula y una letra en mayúscula. Los caracteres válidos son: A-Z, a-z, 0-9, @ ! # $ % & ' * + - / = ? ^ _ ` {} ~</p> -->
                 </div>
             </form>
         </div>
@@ -41,17 +42,18 @@
             <h3>ACCEDER A CUENTA</h3>
             <form [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
                 <div>
-                    <input class="usuario" type="text" placeholder="email@..." name="usuario" formControlName="username">
+                    <input class="usuario" type="text" placeholder="email@..." name="usuario" formControlName="email">
                 </div>
                 <div>
                     <input type="password" placeholder="contraseña..." name="contraseña" formControlName="password">
                 </div>
                 <div>
                     <input type="submit" class="btn btn-primary" value="acceder">
+
                 </div>
             </form>
         </div>
 
-        <!--  <p>La contraseña debe tener 8 o más caracteres y debe contener al menos un número, una letra en minúscula y una letra en mayúscula. Los caracteres válidos son: A-Z, a-z, 0-9, @ ! # $ % & ' * + - / = ? ^ _ ` {} ~</p> -->
+
     </div>
 </div>
