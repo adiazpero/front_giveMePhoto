@@ -19,7 +19,7 @@ export class ProductosComponent implements OnInit {
   }
 
   anyFunction() {
-    console.log('llamada desde el padre')
+    console.log('anyfunction en productos')
   }
 
   ngOnInit() {
@@ -34,7 +34,6 @@ export class ProductosComponent implements OnInit {
 
     //Productos: filtrar por categorias => camaras/objetivos/accesorios
     this.activatedRoute.params.subscribe(async params => {
-      console.log(params)
       if (!params.categoria) {
         const response = await this.productosService.getAll();
         this.productos = response;

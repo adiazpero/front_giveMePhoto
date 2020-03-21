@@ -8,26 +8,29 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CarritoComponent implements OnInit {
 
 
-  @Input() pedido: any;
+  @Input() listaPedido: any[];
+
 
   constructor() {
 
   }
 
   ngOnInit() {
+    this.listaPedido = JSON.parse(localStorage.getItem('pedido'));
+    console.log(this.listaPedido);
   }
 
 
   anyFunction() {
-    console.log('llamada desde el padre')
+    console.log('anyfunction en el carrito')
   }
 
   sumaProductos() {
     let resultado = 0;
-    for (const producto of this.pedido) {
-      console.log(this.pedido)
+    for (const producto of this.listaPedido) {
+      console.log('listaPedido:', this.listaPedido)
       resultado += producto.precio;
-      console.log(resultado)
+      console.log('resultado suma', resultado)
     }
     return resultado;
   }
