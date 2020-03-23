@@ -10,11 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductosComponent implements OnInit {
 
   productos: any[];
+  totalRecords: number;
+  page: Number = 1;
   @Output() productoSeleccionado: EventEmitter<[]>;
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.productoSeleccionado = new EventEmitter();
+    this.productos = new Array<any>();
 
   }
 
@@ -23,14 +26,6 @@ export class ProductosComponent implements OnInit {
   }
 
   ngOnInit() {
-    //Productos => ver todos
-
-    /*       const response =  this.productosService.getAll();
-          this.productos = response;
-          console.log(response)
-       */
-
-
 
     //Productos: filtrar por categorias => camaras/objetivos/accesorios
     this.activatedRoute.params.subscribe(async params => {

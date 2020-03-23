@@ -126,9 +126,12 @@
     <div class="productos">
         <div class="row">
             <h2 class="tituloseccion">Cámaras</h2>
-            <div class="card-group float-right">
-                <div *ngFor="let producto of productos">
-                    <div class="card col-lg-12">
+            <div class="card-group float-right col-lg-12">
+                <div *ngFor="let producto of productos | paginate: {id:'listing_pagination',
+                itemsPerPage: 6,
+                currentPage: page,
+                totalItems: totalrecords}">
+                    <div class="card col-lg-12 col-md-8 col-sm-4">
                         <div class="carousel slide" data-ride="carousel">
                             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                                 <div class="carousel-inner">
@@ -159,7 +162,8 @@
                                 <h5 class="card-title text-center">{{producto.marca}} {{producto.modelo}}</h5>
                                 <p class="card-text text-center"><span class="negrita">Categoria:
                                     </span>{{producto.categoria}}<span class="negrita">Resolución:
-                                    </span>{{producto.resolucion}}<span class="negrita">Peso:
+                                    </span>{{producto.resolucion}}<span class="negrita">Iso:
+                                    </span>{{producto.iso}}<br><span class="negrita">Peso:
                                     </span>{{producto.peso}}<span class="negrita">Focal: </span>{{producto.focal}}<span
                                         class="negrita">Altura: </span>{{producto.altura}}</p>
                                 <p class="card-text text-center"><span class="negrita">Precio: </span><small
@@ -172,175 +176,9 @@
                     </div>
                 </div>
             </div>
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/91%2BBDENUjUL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Nikon Coolpix B600</h5>
-                        <p class="card-text text-center"> Cámara Réflex - Nikon D7500, 21 MP, 4K, WiFi, Bluetooth +
-                            Objetivo
-                            AF-S 18-140mm f/3.5-5.6G ED VR</p>
-                        <p class="card-text text-center"><small class="text-danger">300€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/81OXkfWNa3L._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Nikon D5600</h5>
-                        <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">295€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-            <!--         <div class="card-group float-right">
-            <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/81hX14JYLpL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Nikon D750</h5>
-                        <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">750€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/718wPji6vSL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Canon EOS 2000D</h5>
-                        <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">550€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/91re8M%2BtB-L._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Canon EOS 77D </h5>
-                        <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">1200€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-            <!--         <div class="card-group float-right">
-            <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/61zcWNrv65L._SL1080_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Canon EOS 90D</h5>
-                        <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">750€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/718wPji6vSL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Sony RX10</h5>
-                        <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">550€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51T%2BPr5F9JL.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Sony Alpha 7 </h5>
-                        <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">1200€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-            <!--         <div class="card-group float-right">
-            <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/71C1Zp4lTSL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Sony Alpha 7S</h5>
-                        <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">750€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/91Qro4jz5yL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Olympus M10</h5>
-                        <p class="card-text text-center">Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">550€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
-            <!--             <div>
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://images-na.ssl-images-amazon.com/images/I/91vN5YilrvL._SL1500_.jpg"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Panasonic FZ330 </h5>
-                        <p class="card-text text-center"> Cámara Reflex - Canon EOS 77D + Objetivo 18-55MM IS STM, SLR,
-                            24.2MP
-                        </p>
-                        <p class="card-text text-center"><small class="text-danger">1200€</small></p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </div>
-                </div>
-            </div> -->
+        </div>
+        <div>
+            <pagination-controls id="listing_pagination" maxSize="4" directionalLinks="true"
+                (pageChange)="page = $event"></pagination-controls>
         </div>
     </div>

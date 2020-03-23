@@ -56,7 +56,7 @@ footer {
     width: 100%;
     background: rgb(31, 30, 30);
     text-align: center;
-    bottom: 0;
+   /*  bottom: 0; */
 }
 
 footer .arrow a {
