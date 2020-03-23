@@ -12,6 +12,8 @@ import { BlogComponent } from './blog/blog.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { DetalleCursoComponent } from './detalle-curso/detalle-curso.component';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -24,6 +26,8 @@ import { CarritoComponent } from './carrito/carrito.component';
     RegistroComponent,
     ProductosComponent,
     CarritoComponent,
+    DetalleCursoComponent,
+    UserComponent,
 
   ],
   imports: [

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private router: Router) { }
+
+
 
   ngOnInit() {
+
+  }
+
+  manejarClickIniciacion() {
+    this.router.navigate(['/cursos/iniciacion'])
+  }
+
+  manejarClickMedio() {
+    this.router.navigate(['/cursos/medio'])
+  }
+
+
+  manejarClickAvanzado() {
+    this.router.navigate(['/cursos/avanzado'])
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,8 +4,7 @@
 
     <a class="navbar-brand logo" href="#"><i class="fas fa-camera-retro"></i></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -16,8 +15,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle productos" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
+                <a class="nav-link dropdown-toggle productos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#" [routerLink]="['/productos']">Ver Todos</a>
@@ -28,15 +26,16 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Cursos
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" [routerLink]="['/cursos']">Cursos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Nivel Iniciacion</a>
-                    <a class="dropdown-item" href="#">Nivel Medio</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Nivel Avanzado</a>
-                </div>
+                <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [routerLink]="['/cursos']">Cursos
+                </a> -->
+                <!--   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#" [routerLink]="['/cursos']">Ver Todos</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/iniciacion']">Nivel Iniciacion</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/medio']">Nivel Medio</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/avanzado']">Nivel Avanzado</a>
+                </div> -->
             </li>
 
             <li class="nav-item">
@@ -50,7 +49,7 @@
         </form>
 
         <div class="iconos">
-            <a href="#" [routerLink]="['/registro']"><i class="far fa-user-circle"></i></a>
+            <a href="#" [routerLink]="['/registro']"><i class="fas fa-user"></i></a>
             <a href="#" [routerLink]="['/carrito']"><i class=" fas fa-shopping-cart"></i></a>
         </div>
     </div>

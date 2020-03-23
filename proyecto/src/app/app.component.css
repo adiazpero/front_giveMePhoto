@@ -3,7 +3,7 @@
 }
 
 .navbar {
-    background: rgb(240, 243, 243);
+    background: transparent;
     height: 80px;
     padding: 0 50px;
 }
@@ -52,12 +52,11 @@
 }
 
 footer {
-    position: relative;
-    margin-top: 5000px;
+    position: absolute;
     width: 100%;
     background: rgb(31, 30, 30);
     text-align: center;
-    padding: 0;
+    bottom: 0;
 }
 
 footer .arrow a {
@@ -86,4 +85,3 @@ footer ul li a {
     background: rgb(17, 17, 17);
     color: grey;
 }
-

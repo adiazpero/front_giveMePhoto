@@ -6,6 +6,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { DetalleCursoComponent } from './detalle-curso/detalle-curso.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'productos', component: ProductosComponent },
   { path: 'productos/:categoria', component: ProductosComponent },
   { path: 'cursos', component: CursosComponent },
+  { path: 'cursos/:nivel', component: DetalleCursoComponent },
+  { path: 'user', component: UserComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'blog', component: BlogComponent },
