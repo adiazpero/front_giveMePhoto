@@ -1,10 +1,27 @@
-<div class="body">
-    <div class="pedido" *ngFor="let producto of listaPedido">
-        <img [src]="producto.imagen1" alt="">
-        <p>{{producto.marca}} {{producto.modelo}} {{producto.precio}}€</p>
-    </div>
-
-    <div>
-        <p>Total = {{sumaProductos()}}</p>
-    </div>
+<div class="body container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of listaPedido">
+                <td><img [src]="producto.imagen1">{{producto.marca}} {{producto.modelo}}</td>
+                <td>{{producto.precio}}€</td>
+                <td>1x</td>
+                <td>{{producto.precio}}€</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><strong>TOTAL</strong></td>
+                <td><strong>{{sumaProductos()}}€</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn boton-primario">Realizar Pedido</button>
 </div>
