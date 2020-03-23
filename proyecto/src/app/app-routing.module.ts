@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'productos/:categoria', component: ProductosComponent },
   { path: 'cursos', component: CursosComponent },
   { path: 'cursos/:nivel', component: DetalleCursoComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'user/:id', component: UserComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'blog', component: BlogComponent },
