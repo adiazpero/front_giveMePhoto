@@ -52,7 +52,7 @@
 }
 
 footer {
-    position: fixed;
+    position: relative;
     left: 0;
     width: 100%;
     background: rgb(31, 30, 30);

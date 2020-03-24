@@ -41,9 +41,9 @@
                 <tbody>
                     <tr>
                         <td>{{pedido.fechapedido | date: 'dd-MM-yyyy'}}</td>
-                        <td>{{pedido.productos.marca}}</td>
+                        <td>{{pedido.productos}}</td>
                         <td>Entregado</td>
-                        <td>{{pedido.sum(productos.precio)}}</td>
+                        <td>{{pedido.precio_total}}</td>
                     </tr>
                     <tr>
                         <td>15-03-2020</td>
