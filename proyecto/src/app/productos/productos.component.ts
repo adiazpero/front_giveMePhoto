@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductosService } from '../productos.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CarritoService } from '../carrito.service';
 
 @Component({
   selector: 'app-productos',
@@ -15,7 +16,7 @@ export class ProductosComponent implements OnInit {
   @Output() productoSeleccionado: EventEmitter<[]>;
 
 
-  constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router, private carritoService: CarritoService) {
     this.productoSeleccionado = new EventEmitter();
     this.productos = new Array<any>();
 
@@ -43,7 +44,8 @@ export class ProductosComponent implements OnInit {
   }
 
   enviarProducto(producto) {
-    this.productoSeleccionado.emit(producto);
+    /* this.productoSeleccionado.emit(producto); */
+    this.carritoService.agregarProducto(producto);
   }
 
 

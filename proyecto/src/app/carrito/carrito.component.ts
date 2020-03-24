@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CarritoService } from '../carrito.service';
 
 @Component({
   selector: 'app-carrito',
@@ -7,22 +8,28 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
+  /* 
+    @Input() */
+  listaPedido: any[];
 
-  @Input() listaPedido: any[];
-
-
-  constructor() {
+  constructor(private carritoService: CarritoService) {
 
   }
 
   ngOnInit() {
-    this.listaPedido = JSON.parse(localStorage.getItem('pedido'));
-    console.log(this.listaPedido);
+    /*     this.listaPedido = JSON.parse(localStorage.getItem('pedido'));
+        console.log(this.listaPedido); */
+    this.listaPedido = this.carritoService.recuperarCarrito();
+
   }
 
 
-  anyFunction() {
-    console.log('anyfunction en el carrito')
+  /*   anyFunction() {
+      console.log('anyfunction en el carrito')
+    } */
+
+  manejarBorrar(pId) {
+    this.carritoService.borrarProducto(pId);
   }
 
   sumaProductos() {

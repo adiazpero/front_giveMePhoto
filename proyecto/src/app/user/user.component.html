@@ -1,1 +1,128 @@
+<<<<<<< HEAD
 <p>user works!</p>
+=======
+<div class="body container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mis datos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Mis pedidos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mis cursos</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent" *ngFor="let item of usuario">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+            <br>
+            <h2>Bienvenido a tu área de usuario<i class="far fa-address-card"></i></h2>
+            <hr>
+            <ul>
+                <li>Nombre: {{item.nombre}}.ng</li>
+                <li>Apellidos: {{item.apellidos}}.</li>
+                <li>Email: {{item.email}}.</li>
+                <li>Teléfono: {{item.telefono}}.</li>
+                <li>Fecha Registro: {{item.fecharegistro | date: 'dd-MM-yy'}}.</li>
+            </ul>
+            <button type="button" class="btn btn-light">Editar perfil</button>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <br>
+            <h2>Historial de pedidos<i class="fas fa-box-open"></i></h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha de pedido</th>
+                        <th scope="col">Productos</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Total Pedido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01-03-2020</td>
+                        <td>Nikon D3500, Tamron 16-300mm, Tripode Manfrotto</td>
+                        <td>Entregado</td>
+                        <td>750€</td>
+                    </tr>
+                    <tr>
+                        <td>15-03-2020</td>
+                        <td>Canon 85mm</td>
+                        <td>Entregado</td>
+                        <td>200€</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>950€</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <br>
+            <h2>Historial de cursos realizados<i class="fas fa-lightbulb"></i></h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha de realización</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01-03-2020</td>
+                        <td>Fotografia en blanco y negro</td>
+                        <td>Realizado</td>
+                        <td>50€</td>
+                    </tr>
+                    <tr>
+                        <td>15-03-2020</td>
+                        <td>Fotografia nocturna</td>
+                        <td>Realizado</td>
+                        <td>100€</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>150€</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+<!--     <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Mis datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pedidos">Mis pedidos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Bienvenido a tu área de usuario</h5>
+            <p class="card-text">Nombre: Victor</p>
+            <p class="card-text">Apellidos: López Marin de Robles</p>
+            <p class="card-text">Email: victorlo_90@hotmail.com</p>
+            <p class="card-text">Teléfono: 666247999</p>
+            <p class="card-text">Fecha Registro: 2020-03-03</p>
+        </div>
+        <div id="pedidos" class="card-body">
+            <h5 class="card-title">Bienvenido a tu área de usuario</h5>
+            <p class="card-text">Nombre: Victor</p>
+            <p class="card-text">Apellidos: López Marin de Robles</p>
+            <p class="card-text">Email: victorlo_90@hotmail.com</p>
+            <p class="card-text">Teléfono: 666247999</p>
+            <p class="card-text">Fecha Registro: 2020-03-03</p>
+        </div>
+    </div> -->
+</div>
+>>>>>>> 0bc10bf36a3b4aa50a128f5559b6ebd5f8b3e17a

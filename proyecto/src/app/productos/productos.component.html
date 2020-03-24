@@ -167,7 +167,7 @@
                                     </span>{{producto.peso}}<span class="negrita">Focal: </span>{{producto.focal}}<span
                                         class="negrita">Altura: </span>{{producto.altura}}</p>
                                 <p class="card-text text-center"><span class="negrita">Precio: </span><small
-                                        class="text-danger">{{producto.precio}}€</small>
+                                        class="precioText">{{producto.precio}}€</small>
                                 </p>
                                 <button class="btn btn-outline-primary"
                                     (click)="enviarProducto(producto)">Comprar</button>
@@ -178,7 +178,7 @@
             </div>
         </div>
         <div>
-            <pagination-controls id="listing_pagination" maxSize="4" directionalLinks="true"
+            <pagination-controls class="pagination" id="listing_pagination" maxSize="4" directionalLinks="true"
                 (pageChange)="page = $event"></pagination-controls>
         </div>
     </div>

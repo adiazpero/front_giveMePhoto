@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  arrPedido: any;
+ /*  arrPedido: any; */
 
   constructor() {
-    this.arrPedido = [];
+    /* this.arrPedido = []; */
 
   }
 
-  onActivate(componentReference) {
+/*   onActivate(componentReference) {
     console.log('pagina que está activa:', componentReference)
     componentReference.anyFunction();
 
@@ -26,6 +26,6 @@ export class AppComponent {
       localStorage.setItem('pedido', JSON.stringify(this.arrPedido));
     });
 
-  }
+  } */
 
 }

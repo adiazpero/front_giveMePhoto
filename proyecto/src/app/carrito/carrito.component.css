@@ -1,9 +1,18 @@
-
 button{
     margin-left: 77%;
 }
-
+i{
+    margin-left: 1em;
+    font-size: 1.2em;
+}
+.cantidad{
+    padding-left: 2em;
+}
 img{
     width: 100px;
     height: auto;
+}
+
+.texto{
+    padding-top: 2.2em;
 }
