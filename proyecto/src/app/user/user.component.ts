@@ -10,15 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 export class UserComponent implements OnInit {
 
   usuario: any;
+  pedidos: any;
 
   constructor(private usuarioService: UsuarioService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      const response = await this.usuarioService.getUserById(params.id);
-      this.usuario = response;
-      console.log(this.usuario)
+      const usuario = await this.usuarioService.getUserById(params.id);
+      this.usuario = usuario;
+
+      const pedidos = await this.usuarioService.getPedidosUser(params.id);
+      this.pedidos = pedidos;
+      console.log(this.pedidos)
     });
+
+
+
   }
 
 

@@ -13,7 +13,7 @@
     <div class="tab-content" id="myTabContent" *ngFor="let item of usuario">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <br>
-            <h2>Bienvenido a tu área de usuario<i class="far fa-address-card"></i></h2>
+            <h2>Perfil de usuario<i class="far fa-address-card"></i></h2>
             <hr>
             <ul>
                 <li>Nombre: {{item.nombre}}.ng</li>
@@ -24,24 +24,26 @@
             </ul>
             <button type="button" class="btn btn-light">Editar perfil</button>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+        <!--    Pestaña pedidos -->
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" *ngFor="let pedido of pedidos">
             <br>
-            <h2>Historial de pedidos<i class="fas fa-box-open"></i></h2>
-            <table class="table">
+            <h2>Historial de pedidos<i class=" fas fa-box-open "></i></h2>
+            <table class="table ">
                 <thead>
                     <tr>
-                        <th scope="col">Fecha de pedido</th>
-                        <th scope="col">Productos</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Total Pedido</th>
+                        <th scope="col ">Fecha de pedido</th>
+                        <th scope="col ">Productos</th>
+                        <th scope="col ">Estado</th>
+                        <th scope="col ">Total Pedido</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>01-03-2020</td>
-                        <td>Nikon D3500, Tamron 16-300mm, Tripode Manfrotto</td>
+                        <td>{{pedido.fechapedido | date: 'dd-MM-yyyy'}}</td>
+                        <td>{{pedido.productos.marca}}</td>
                         <td>Entregado</td>
-                        <td>750€</td>
+                        <td>{{pedido.sum(productos.precio)}}</td>
                     </tr>
                     <tr>
                         <td>15-03-2020</td>
@@ -58,16 +60,16 @@
                 </tbody>
             </table>
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="tab-pane fade " id="contact " role="tabpanel " aria-labelledby="contact-tab ">
             <br>
-            <h2>Historial de cursos realizados<i class="fas fa-lightbulb"></i></h2>
-            <table class="table">
+            <h2>Historial de cursos realizados<i class="fas fa-lightbulb "></i></h2>
+            <table class="table ">
                 <thead>
                     <tr>
-                        <th scope="col">Fecha de realización</th>
-                        <th scope="col">Curso</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Precio</th>
+                        <th scope="col ">Fecha de realización</th>
+                        <th scope="col ">Curso</th>
+                        <th scope="col ">Estado</th>
+                        <th scope="col ">Precio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -93,32 +95,32 @@
             </table>
         </div>
     </div>
-    <!--     <div class="card text-center">
-        <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Mis datos</a>
+    <!--     <div class="card text-center ">
+        <div class="card-header ">
+            <ul class="nav nav-tabs card-header-tabs ">
+                <li class="nav-item ">
+                    <a class="nav-link active " href="# ">Mis datos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#pedidos">Mis pedidos</a>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#pedidos ">Mis pedidos</a>
                 </li>
             </ul>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Bienvenido a tu área de usuario</h5>
-            <p class="card-text">Nombre: Victor</p>
-            <p class="card-text">Apellidos: López Marin de Robles</p>
-            <p class="card-text">Email: victorlo_90@hotmail.com</p>
-            <p class="card-text">Teléfono: 666247999</p>
-            <p class="card-text">Fecha Registro: 2020-03-03</p>
+        <div class="card-body ">
+            <h5 class="card-title ">Bienvenido a tu área de usuario</h5>
+            <p class="card-text ">Nombre: Victor</p>
+            <p class="card-text ">Apellidos: López Marin de Robles</p>
+            <p class="card-text ">Email: victorlo_90@hotmail.com</p>
+            <p class="card-text ">Teléfono: 666247999</p>
+            <p class="card-text ">Fecha Registro: 2020-03-03</p>
         </div>
-        <div id="pedidos" class="card-body">
-            <h5 class="card-title">Bienvenido a tu área de usuario</h5>
-            <p class="card-text">Nombre: Victor</p>
-            <p class="card-text">Apellidos: López Marin de Robles</p>
-            <p class="card-text">Email: victorlo_90@hotmail.com</p>
-            <p class="card-text">Teléfono: 666247999</p>
-            <p class="card-text">Fecha Registro: 2020-03-03</p>
+        <div id="pedidos " class="card-body ">
+            <h5 class="card-title ">Bienvenido a tu área de usuario</h5>
+            <p class="card-text ">Nombre: Victor</p>
+            <p class="card-text ">Apellidos: López Marin de Robles</p>
+            <p class="card-text ">Email: victorlo_90@hotmail.com</p>
+            <p class="card-text ">Teléfono: 666247999</p>
+            <p class="card-text ">Fecha Registro: 2020-03-03</p>
         </div>
     </div> -->
 </div>
