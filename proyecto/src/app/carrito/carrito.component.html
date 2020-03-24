@@ -6,20 +6,23 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Total</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let producto of listaPedido">
                 <td><img [src]="producto.imagen1">{{producto.marca}} {{producto.modelo}}</td>
-                <td>{{producto.precio}}€</td>
-                <td>1x</td>
-                <td>{{producto.precio}}€</td>
+                <td class="texto">{{producto.precio}}€</td>
+                <td class="cantidad texto">1x</td>
+                <td class="texto">{{producto.precio}}€</td>
+                <td class="texto"><a href="#" (click)="manejarBorrar(producto.id)"><i class="far fa-times-circle"></i></a></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td><strong>TOTAL</strong></td>
                 <td><strong>{{sumaProductos()}}€</strong></td>
+                <td></td>
             </tr>
         </tbody>
     </table>

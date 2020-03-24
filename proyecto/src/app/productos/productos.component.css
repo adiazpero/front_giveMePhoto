@@ -82,6 +82,10 @@ span{
     font-size: 1.2em;
     font-weight: bold;
 }
+
+.precioText{
+    font-size: 1.5em;
+}
 .btn{
     margin-left: 210px;
 }
