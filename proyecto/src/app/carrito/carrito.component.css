@@ -16,3 +16,7 @@ img{
 .texto{
     padding-top: 2.2em;
 }
+
+.cerrar{
+    cursor: pointer;
+}
