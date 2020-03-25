@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -50,8 +50,13 @@ export class CarritoService {
 
 
 
-  enviarPedido(pProductoId) {
-    return this.httpClient.post(`${this.baseUrl}/carrito`, pProductoId).toPromise();
+  enviarPedido(pPedido) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'user-token': localStorage.getItem('token')
+      })
+    }
+    return this.httpClient.post(`${this.baseUrl}`, pPedido, httpOptions).toPromise();
   }
 
 

@@ -14,10 +14,17 @@ export class CarritoComponent implements OnInit {
   listaPedido: any[];
   formulario: FormGroup;
   mostrar: boolean;
+  arrfkUsuario: any[];
+  arrFormulario: any[];
+  arrInfoPedido: any[];
 
   constructor(private carritoService: CarritoService) {
 
     this.mostrar = false;
+    this.arrfkUsuario = [];
+    this.arrFormulario = [];
+    this.arrInfoPedido = [];
+
 
     this.formulario = new FormGroup({
       direccion: new FormControl(''),
@@ -35,9 +42,30 @@ export class CarritoComponent implements OnInit {
 
 
 
-  onSubmit() {
-    console.log(this.formulario.value)
+
+
+  confirmarPedido() {
+    this.mostrar = !this.mostrar;
+    for (let producto of this.listaPedido) {
+      this.arrfkUsuario.push(producto.id);
+      localStorage.setItem('fkProducto', JSON.stringify(this.arrfkUsuario));
+    }
   }
+
+
+
+  onSubmit() {
+
+    const pedido = {
+      direccion: this.formulario.value.direccion,
+      telefono: this.formulario.value.telefono,
+      productos: JSON.parse(localStorage.getItem('fkProducto'))
+    }
+    console.log(pedido)
+    this.carritoService.enviarPedido(pedido);
+  }
+
+
 
   manejarBorrar(pId) {
     this.carritoService.borrarProducto(pId);
@@ -58,13 +86,6 @@ export class CarritoComponent implements OnInit {
 
 
 
-  realizarPedido() {
-    for (let producto of this.listaPedido) {
-      console.log(producto.id)
-      this.carritoService.enviarPedido(producto.id);
-      this.mostrar = !this.mostrar;
-    }
-  }
 
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -33,9 +33,17 @@ export class UsuarioService {
 
 
   // Obtener Usuario
-  getUserById(pId) {
+  getUserById(pId): Promise<any> {
+    /*   const httpOptions = {
+        headers: new HttpHeaders({
+          'user-token': localStorage.getItem('token')
+        })
+      } */
     return this.httpClient.get(`${this.baseUrl}/${pId}`).toPromise();
   }
+
+
+
 
 
   //Obtener pedidos

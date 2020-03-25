@@ -8,6 +8,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DetalleCursoComponent } from './detalle-curso/detalle-curso.component';
 import { UserComponent } from './user/user.component';
+import { LoginGuard } from './login.guard';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'cursos/:nivel', component: DetalleCursoComponent },
   { path: 'user/:id', component: UserComponent },
   { path: 'registro', component: RegistroComponent },
-  { path: 'carrito', component: CarritoComponent },
+  { path: 'carrito', component: CarritoComponent, canActivate: [LoginGuard] },
   { path: 'blog', component: BlogComponent },
   { path: '**', component: MainComponent }
 ];

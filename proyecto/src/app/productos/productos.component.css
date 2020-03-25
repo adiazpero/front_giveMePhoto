@@ -1,100 +1,105 @@
-.pagina{
+.pagina {
     margin-top: 4em;
+    padding-bottom: 6rem;
 }
 
+
 /* FILTRO */
-.filtro{
-    width:300px;
+
+.filtro {
+    width: 300px;
     height: 1400px;
     background-color: rgb(212, 212, 212);
     margin: 0.8em;
     border-radius: 10px;
 }
 
-.filtro{
+.filtro {
     margin-top: 10px;
     color: black;
 }
 
-.filtro h2{
+.filtro h2 {
     text-align: center;
 }
 
-.titulofiltro{
+.titulofiltro {
     margin-left: 1em;
 }
 
-span{
+span {
     margin-left: 1em;
 }
 
-.filtro .filtros, .filtros li{
+.filtro .filtros,
+.filtros li {
     margin: 0.5em 1em;
-    
 }
 
-.filtro .filtros .tituloLi{
+.filtro .filtros .tituloLi {
     font-size: 1.3em;
     list-style: none;
 }
 
-.filtro .filtros input{
+.filtro .filtros input {
     margin-bottom: 1em;
     margin-left: 2em;
 }
 
-.filtro .filtros .range-slider{
+.filtro .filtros .range-slider {
     margin-left: -4em;
     margin-top: 1em;
 }
 
+
 /* TITULO SECCION */
-    .tituloseccion{
-        color: rgb(51,48,48);
-        margin: 1em 0 0.1em 1em;
-    }
+
+.tituloseccion {
+    color: rgb(51, 48, 48);
+    margin: 1em 0 0.1em 1em;
+}
+
 
 /* PRODUCTOS */
 
-.row{
+.row {
     padding-left: 3em;
 }
 
-.card{
+.card {
     width: 530px;
     height: 420px;
     margin: 1em;
 }
 
-.card-body{
+.card-body {
     padding: 0.25em;
 }
-.card img{
-    width:100%;
-    height:210px;
+
+.card img {
+    width: 100%;
+    height: 210px;
     margin: 0.5em auto 0 auto;
 }
 
-.card .negrita{
+.card .negrita {
     font-weight: bold;
 }
-.card .text-danger{
+
+.card .text-danger {
     font-size: 1.2em;
     font-weight: bold;
 }
 
-.precioText{
+.precioText {
     font-size: 1.5em;
 }
-.btn{
+
+.btn {
     margin-left: 210px;
 }
 
-.pagination{
+.pagination {
     margin: 1.5em;
     margin-left: 750px;
 }
-
-
-
-

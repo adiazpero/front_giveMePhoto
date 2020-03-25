@@ -1,22 +1,25 @@
-button{
-    margin-left: 77%;
+.confirmar {
+    text-align: right;
 }
-i{
+
+i {
     margin-left: 1em;
     font-size: 1.2em;
 }
-.cantidad{
+
+.cantidad {
     padding-left: 2em;
 }
-img{
+
+img {
     width: 100px;
     height: auto;
 }
 
-.texto{
+.texto {
     padding-top: 2.2em;
 }
 
-.cerrar{
+.cerrar {
     cursor: pointer;
 }

@@ -47,13 +47,18 @@ export class RegistroComponent implements OnInit {
   }
 
 
+
   onSubmitLogin() {
-    console.log(this.formLogin.value)
     this.usuarioService.loginUser(this.formLogin.value)
       .then(response => {
         console.log(response['success']);
+        localStorage.setItem('token', response['success']);
+        confirm('usuario logado correctamente')
+        this.router.navigate(['/main']);
       })
-    this.router.navigate(['/main']);
+      .catch(err => {
+        console.log(err)
+      })
   }
 
 
