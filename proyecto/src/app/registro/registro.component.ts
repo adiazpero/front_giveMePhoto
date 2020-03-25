@@ -10,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
+
   formRegistro: FormGroup;
   formLogin: FormGroup;
   errores: any[];
+  mostrar: boolean;
 
   constructor(private usuarioService: UsuarioService, private router: Router) {
+
 
     //REGISTRO
     this.formRegistro = new FormGroup({
@@ -27,6 +30,8 @@ export class RegistroComponent implements OnInit {
       email: new FormControl('', []),
       password: new FormControl('', [])
     });
+
+    this.mostrar = false;
 
     //LOGIN
     this.formLogin = new FormGroup({
@@ -43,9 +48,10 @@ export class RegistroComponent implements OnInit {
 
   async onSubmitRegistro() {
     await this.usuarioService.createUser(this.formRegistro.value)
-    this.router.navigate(['/main']);
-  }
+    this.mostrar = !this.mostrar;
 
+  }
+  /*  this.router.navigate(['/main']); */
 
 
   onSubmitLogin() {
