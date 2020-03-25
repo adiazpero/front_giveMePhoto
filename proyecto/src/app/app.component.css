@@ -1,7 +1,3 @@
-* {
-    margin: 0;
-}
-
 .navbar {
     background: transparent;
     height: 80px;
@@ -52,9 +48,10 @@
 }
 
 footer {
-    position: relative;
+    position: absolute;
     left: 0;
     width: 100%;
+    height: 6rem;
     background: rgb(31, 30, 30);
     text-align: center;
     bottom: 0;
