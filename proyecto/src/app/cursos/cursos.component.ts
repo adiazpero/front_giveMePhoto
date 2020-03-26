@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CursosService } from '../cursos.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class CursosComponent implements OnInit {
 
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cursosService: CursosService) { }
 
 
 
@@ -31,6 +32,7 @@ export class CursosComponent implements OnInit {
   manejarClickAvanzado() {
     this.router.navigate(['/cursos/avanzado'])
   }
+
 
 }
 

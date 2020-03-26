@@ -15,7 +15,7 @@ export class UserComponent implements OnInit {
   constructor(private usuarioService: UsuarioService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-
+    //recuperamos usuarios 
     this.usuarioService.getUserById()
       .then(response => {
         this.usuario = response;
@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
       .catch(err => {
         console.log(err)
       });
-
+    //recuperamos pedidos de usuario
     this.usuarioService.getPedidosUser()
       .then(response => {
         this.pedidos = response;
