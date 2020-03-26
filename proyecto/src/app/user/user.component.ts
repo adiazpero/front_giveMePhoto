@@ -24,13 +24,14 @@ export class UserComponent implements OnInit {
         console.log(err)
       });
 
-    /*    this.activatedRoute.params.subscribe(async params => {
-         const usuario = await this.usuarioService.getUserById();
-         this.usuario = usuario;
-         const pedidos = await this.usuarioService.getPedidosUser();
-         this.pedidos = pedidos;
-         console.log(this.pedidos); 
-       })   */
+    this.usuarioService.getPedidosUser()
+      .then(response => {
+        this.pedidos = response;
+      })
+      .catch(err => {
+        console.log(err)
+      })
+
   }
 
 }

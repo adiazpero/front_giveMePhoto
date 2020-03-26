@@ -14,7 +14,8 @@ export class UsuarioService {
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/users";
-    this.baseUrlPedidos = "http://localhost:3000/api/pedidos"
+    this.baseUrlPedidos = "http://localhost:3000/api/detallePedidos";
+
   }
 
 
@@ -34,18 +35,23 @@ export class UsuarioService {
 
   // Obtener Usuario
   getUserById(): Promise<any> {
-    /*   const httpOptions = {
-        headers: new HttpHeaders({
-          'user-token': localStorage.getItem('token')
-        })
-      } */
-    return this.httpClient.get(`${this.baseUrl}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'user-token': localStorage.getItem('token')
+      })
+    }
+    return this.httpClient.get(`${this.baseUrl}`, httpOptions).toPromise();
   }
 
 
   //Obtener pedidos
   getPedidosUser() {
-    return this.httpClient.get(`${this.baseUrlPedidos}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'user-token': localStorage.getItem('token')
+      })
+    }
+    return this.httpClient.get(`${this.baseUrlPedidos}`, httpOptions).toPromise();
   }
 
 
