@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 * {
-    font-family: 'Kalam', cursive;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
     background-color: transparent;
     border: 1px solid #212122;
     color: #212122;
-    padding: 15px 65px;
+    padding: 15px 60px;
     border-radius: 0!important;
 }
 

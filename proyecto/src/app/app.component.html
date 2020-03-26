@@ -28,18 +28,10 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" [routerLink]="['/cursos']">Cursos
                 </a>
-                <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [routerLink]="['/cursos']">Cursos
-                </a> -->
-                <!--   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos']">Ver Todos</a>
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/iniciacion']">Nivel Iniciacion</a>
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/medio']">Nivel Medio</a>
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/avanzado']">Nivel Avanzado</a>
-                </div> -->
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#" [routerLink]="['/blog']">Blog</a>
+                <a class="nav-link" href="#blog">Blog</a>
             </li>
 
         </ul>
@@ -50,34 +42,27 @@
 
         <div class="iconos">
 
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle icon" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu perfil" aria-labelledby="navbarDropdown">
 
+                        <a class="dropdown-item" href="#" [routerLink]="['/registro']">Registrate/Login</a>
+                        <a class="dropdown-item" href="#" [routerLink]="['/user']">Mi perfil</a>
+                    </div>
+                </li>
 
-            <!--   <div class="nav-item dropdown"> -->
-            <a href="#" [routerLink]="['/registro']"><i class="fas fa-user"></i></a>
-            <!--  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [routerLink]="['/cursos']">
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos']">Ver Todos</a>
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/iniciacion']">Nivel Iniciacion</a>
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/medio']">Nivel Medio</a>
-                    <a class="dropdown-item" href="#" [routerLink]="['/cursos/avanzado']">Nivel Avanzado</a>
-                </div> -->
-            <!--  </div> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link icon" href="#" [routerLink]="['/carrito']"><i class=" fas fa-shopping-cart"></i></a>
 
-
-
-
-
-
-
-
-
-
-
-            <a href="#" [routerLink]="['/carrito']"><i class=" fas fa-shopping-cart"></i></a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
+
+
 
 <!-- slider -->
 

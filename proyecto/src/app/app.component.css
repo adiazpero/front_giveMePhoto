@@ -6,12 +6,16 @@
 
 .navbar-nav {
     color: white;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .navbar .navbar-nav a {
     margin: 0 15px;
     color: black;
+}
+
+.navbar .navbar-nav a.icon {
+    margin: 0 5px;
 }
 
 .navbar-collapse.show {
@@ -28,8 +32,16 @@
 }
 
 .form-control {
-    margin-right: 50px;
     border-radius: 30px;
+}
+
+.btn-outline-success:hover {
+    color: rgb(5, 5, 5);
+    background-color: transparent;
+}
+
+.perfil {
+    margin-left: -70px;
 }
 
 .btn {
@@ -39,11 +51,10 @@
 }
 
 .iconos {
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .iconos i {
-    margin: 0 50px;
     color: rgb(63, 62, 62);
 }
 
