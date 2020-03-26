@@ -33,22 +33,19 @@ export class UsuarioService {
 
 
   // Obtener Usuario
-  getUserById(pId): Promise<any> {
+  getUserById(): Promise<any> {
     /*   const httpOptions = {
         headers: new HttpHeaders({
           'user-token': localStorage.getItem('token')
         })
       } */
-    return this.httpClient.get(`${this.baseUrl}/${pId}`).toPromise();
+    return this.httpClient.get(`${this.baseUrl}`).toPromise();
   }
 
 
-
-
-
   //Obtener pedidos
-  getPedidosUser(pId) {
-    return this.httpClient.get(`${this.baseUrlPedidos}/${pId}`).toPromise();
+  getPedidosUser() {
+    return this.httpClient.get(`${this.baseUrlPedidos}`).toPromise();
   }
 
 
