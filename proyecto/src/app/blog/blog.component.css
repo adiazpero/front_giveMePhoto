@@ -1,3 +1,19 @@
+.imagen {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+.parrafo {
+    font-size: 20px;
+}
+
+
 /* .card {
     width: 100%;
     font-family: 'Assistant';
