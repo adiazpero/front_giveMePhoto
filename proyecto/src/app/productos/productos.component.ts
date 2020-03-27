@@ -14,35 +14,52 @@ export class ProductosComponent implements OnInit {
   totalRecords: number;
   page: Number = 1;
   @Output() productoSeleccionado: EventEmitter<[]>;
+  mostrar: boolean;
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router, private carritoService: CarritoService) {
     this.productoSeleccionado = new EventEmitter();
     this.productos = new Array<any>();
+    this.mostrar = false;
 
   }
+
+
 
 
 
   ngOnInit() {
 
-    //Productos: filtrar por categorias => camaras/objetivos/accesorios
-    this.activatedRoute.params.subscribe(async params => {
-      if (!params.categoria) {
-        const response = await this.productosService.getAll();
-        this.productos = response;
-      } else {
-        const response = await this.productosService.getByCategoria(params.categoria);
-        this.productos = response;
-      }
+    if (localStorage.getItem('cuestionario')) {
+      this.productos = JSON.parse(localStorage.getItem('cuestionario'));
+      this.mostrar = true;
+    } else {
+      //Productos: filtrar por categorias => camaras/objetivos/accesorios
+      this.activatedRoute.params.subscribe(async params => {
+        if (!params.categoria) {
+          console.log(2)
+          this.productos = await this.productosService.getAll();
+        } else {
+          console.log(3)
+          this.productos = await this.productosService.getByCategoria(params.categoria);
+        }
 
-    });
+      });
+    }
+
+
+
 
 
   }
 
+  async  borrarCuestionario() {
+    localStorage.removeItem('cuestionario');
+    this.productos = await this.productosService.getAll();
+    this.mostrar = false;
+  }
+
   enviarProducto(producto) {
-    /* this.productoSeleccionado.emit(producto); */
     this.carritoService.agregarProducto(producto);
   }
 
@@ -115,7 +132,6 @@ export class ProductosComponent implements OnInit {
   async manejarCheckObjetivo($event) {
     const response = await this.productosService.getByMarcaObjetivo($event.target.value);
     this.productos = response;
-    console.log(response)
   }
 
 
@@ -126,19 +142,16 @@ export class ProductosComponent implements OnInit {
       case 0:
         response = await this.productosService.getByFocal(15, 25);
         this.productos = response;
-        console.log(response);
         break;
 
       case 1:
         response = await this.productosService.getByFocal(25, 51);
         this.productos = response;
-        console.log(response);
         break;
 
       case 2:
         response = await this.productosService.getByFocal(52, 86);
         this.productos = response;
-        console.log(response);
         break;
 
       default:
@@ -150,7 +163,6 @@ export class ProductosComponent implements OnInit {
   async manejarCheckAccesorios($event) {
     const response = await this.productosService.getByAccesorios($event.target.value);
     this.productos = response;
-    console.log(response)
   }
 
   async manejarCheckPrecio($event) {
@@ -159,25 +171,21 @@ export class ProductosComponent implements OnInit {
       case 0:
         response = await this.productosService.getByPrecio(10, 251);
         this.productos = response;
-        console.log(response);
         break;
 
       case 1:
         response = await this.productosService.getByPrecio(275, 501);
         this.productos = response;
-        console.log(response);
         break;
 
       case 2:
         response = await this.productosService.getByPrecio(550, 1001);
         this.productos = response;
-        console.log(response);
         break;
 
       case 3:
         response = await this.productosService.getByPrecio(1100, 2100);
         this.productos = response;
-        console.log(response);
         break;
 
       default:

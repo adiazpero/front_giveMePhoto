@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -18,14 +19,18 @@ export class MainComponent implements OnInit {
   macro: string;
   tecnicas: any[];
   productos: any;
+  precioMin: number;
+  precioMax: number;
+  mostrar: boolean;
 
 
-  constructor(private homeservice: HomeService) {
+  constructor(private homeservice: HomeService, private router: Router) {
     this.tecnicanaturaleza = false;
     this.tecnicanocturna = false;
     this.tecnicaretrato = false;
     this.tecnicamacro = false;
     this.tecnicas = [];
+    this.mostrar = false;
   }
 
   ngOnInit() {
@@ -96,17 +101,52 @@ export class MainComponent implements OnInit {
 
   }
 
+  async manejarCheckPrecio($event) {
+    switch (parseInt($event.target.value)) {
+      case 0:
+        this.precioMin = 10;
+        this.precioMax = 260;
+        break;
+
+      case 1:
+        this.precioMin = 260;
+        this.precioMax = 500;
+        break;
+
+      case 2:
+        this.precioMin = 550;
+        this.precioMax = 1000;
+        break;
+
+      case 3:
+        this.precioMin = 1100;
+        this.precioMax = 2100;
+        break;
+
+      default:
+
+    };
+  }
+
 
   async manejarResultado() {
     const tecnicas = {
       tecnicas: this.tecnicas,
+      precioMin: this.precioMin,
+      precioMax: this.precioMax,
     }
+    console.log(this.tecnicas)
     await this.homeservice.enviarCuestionarioTecnica(tecnicas);
-    const response = await this.homeservice.enviarCuestionarioTecnica(tecnicas);
-    this.productos = response;
-    console.log(this.productos)
+    this.productos = await this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    localStorage.setItem('cuestionario', JSON.stringify(this.productos));
+    if (this.productos === null) {
+      this.mostrar = true;
+    } else {
+      this.router.navigate(['/productos']);
+    }
 
   }
+
 
 
 

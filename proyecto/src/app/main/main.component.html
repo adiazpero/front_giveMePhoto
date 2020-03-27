@@ -41,24 +41,25 @@
         <thead>
             <tr>
                 <th scope="col"></th>
-                <th scope="col">10 - 150€</th>
-                <th scope="col">150€ - 500€</th>
-                <th scope="col">500€ - 1000€</th>
+                <th scope="col">10 - 250€</th>
+                <th scope="col">275€ - 500€</th>
+                <th scope="col">550€ - 1000€</th>
                 <th scope="col">1000€ - 2000€</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">Presupuesto</th>
-                <td><input type="radio" name="radio"></td>
-                <td><input type="radio" name="radio"></td>
-                <td><input type="radio" name="radio"></td>
-                <td><input type="radio" name="radio"></td>
+                <td><input type="radio" name="radio" value="0" (change)="manejarCheckPrecio($event)"></td>
+                <td><input type="radio" name="radio" value="1" (change)="manejarCheckPrecio($event)"></td>
+                <td><input type="radio" name="radio" value="2" (change)="manejarCheckPrecio($event)"></td>
+                <td><input type="radio" name="radio" value="3" (change)="manejarCheckPrecio($event)"></td>
             </tr>
         </tbody>
     </table>
 
-    <input type="button" class="btn btn-dark btn-lg btn-block" (click)="manejarResultado()">Ver resultado
+    <input value="Ver resultado" type="button" class="btn btn-dark btn-lg btn-block" (click)="manejarResultado()">
+    <p *ngIf="mostrar" class="text-center">No hay ningún resultado para esta búsqueda</p>
 </div>
 
 <div *ngFor="let producto of productos">
