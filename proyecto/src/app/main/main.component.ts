@@ -41,62 +41,45 @@ export class MainComponent implements OnInit {
   manejarTecnicaNaturaleza(event) {
     if (event.target.checked) {
       this.tecnicanaturaleza = true;
+      this.naturaleza = 'tecnicanaturaleza';
+      this.tecnicas.push(this.naturaleza);
     } else {
       this.tecnicanaturaleza = false;
     }
 
-    if (this.tecnicanaturaleza === true) {
-      this.naturaleza = 'tecnicanaturaleza';
-      this.tecnicas.push(this.naturaleza);
-    } else {
-      this.tecnicas.pop();
-    }
   }
 
 
   manejarTecnicaNocturna(event) {
     if (event.target.checked) {
       this.tecnicanocturna = true;
+      this.nocturna = 'tecnicanocturna';
+      this.tecnicas.push(this.nocturna);
     } else {
       this.tecnicanocturna = false;
       this.tecnicas.pop();
     }
 
-    if (this.tecnicanocturna === true) {
-      this.nocturna = 'tecnicanocturna';
-      this.tecnicas.push(this.nocturna);
-    } else {
-      this.tecnicas.pop();
-    }
   }
 
   manejarTecnicaRetrato(event) {
     if (event.target.checked) {
       this.tecnicaretrato = true;
+      this.retrato = 'tecnicaretrato';
+      this.tecnicas.push(this.retrato);
     } else {
       this.tecnicanocturna = false;
     }
 
-    if (this.tecnicaretrato === true) {
-      this.retrato = 'tecnicaretrato';
-      this.tecnicas.push(this.retrato);
-    } else {
-      this.tecnicas.pop();
-    }
   }
 
   manejarTecnicaMacro(event) {
     if (event.target.checked) {
       this.tecnicamacro = true;
-    } else {
-      this.tecnicanocturna = false;
-    }
-
-    if (this.tecnicamacro === true) {
       this.macro = 'tecnicamacro';
       this.tecnicas.push(this.macro);
     } else {
-      this.tecnicas.pop();
+      this.tecnicanocturna = false;
     }
 
   }
