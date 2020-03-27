@@ -7,13 +7,17 @@
             <ul class="filtros">
                 <li class="tituloLi">Marca</li>
 
-                <input name="marca" value="nikon" type="radio" id="nikon" (change)="manejarCheckMarca($event)" /><span>Nikon</span>
+                <input name="marca" value="nikon" type="radio" id="nikon"
+                    (change)="manejarCheckMarca($event)" /><span>Nikon</span>
                 <br>
-                <input name="marca" value="canon " type="radio" id="canon" (change)="manejarCheckMarca($event)" /><span>Canon</span>
+                <input name="marca" value="canon " type="radio" id="canon"
+                    (change)="manejarCheckMarca($event)" /><span>Canon</span>
                 <br>
-                <input name="marca" value="sony " type="radio" id="Sony" (change)="manejarCheckMarca($event)" /><span>Sony</span>
+                <input name="marca" value="sony " type="radio" id="Sony"
+                    (change)="manejarCheckMarca($event)" /><span>Sony</span>
                 <br>
-                <input name="marca" value="olympus " type="radio" id="Olympus" (change)="manejarCheckMarca($event)" /><span>Olympus</span>
+                <input name="marca" value="olympus " type="radio" id="Olympus"
+                    (change)="manejarCheckMarca($event)" /><span>Olympus</span>
 
 
                 <li class="tituloLi">Resolución</li>
@@ -24,7 +28,8 @@
                 <input value="1" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>20mp -
                     24mp</span>
                 <br>
-                <input value="2" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>>35</span>
+                <input value="2" type="radio" name="resolucion"
+                    (change)="manejarCheckResolucion($event)" /><span>>35mp</span>
 
 
                 <li class="tituloLi">Iso</li>
@@ -55,7 +60,8 @@
                 <input value="sony" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Sony</span>
                 <br>
-                <input value="olympus" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                <input value="olympus" type="radio" name="marcaObjetivo"
+                    (change)="manejarCheckObjetivo($event)" /><span>
                     Olympus</span>
 
 
@@ -80,11 +86,14 @@
             <ul class="filtros">
                 <li class="tituloLi">Marca</li>
 
-                <input value="k&f" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>K&F</span>
+                <input value="k&f" type="radio" name="accesorios"
+                    (change)="manejarCheckAccesorios($event)" /><span>K&F</span>
                 <br>
-                <input value="manfroto" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Manfroto</span>
+                <input value="manfroto" type="radio" name="accesorios"
+                    (change)="manejarCheckAccesorios($event)" /><span>Manfroto</span>
                 <br>
-                <input value="newer" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Newer</span>
+                <input value="newer" type="radio" name="accesorios"
+                    (change)="manejarCheckAccesorios($event)" /><span>Newer</span>
 
             </ul>
 
@@ -116,7 +125,8 @@
 
     <div class="productos">
         <div class="row">
-            <h2 class="tituloseccion">Cámaras</h2>
+            <h2 class="tituloseccion">Cámaras</h2><input type="button" (click)="borrarCuestionario()" *ngIf="mostrar"
+                value="Borrar el filtro del cuestionario">
             <div class="card-group float-right col-lg-12">
                 <div *ngFor="let producto of productos | paginate: {id:'listing_pagination',
                 itemsPerPage: 6,
@@ -124,7 +134,8 @@
                 totalItems: totalrecords}">
                     <div class="card col-lg-12 col-md-8 col-sm-4">
                         <div class="carousel slide" data-ride="carousel">
-                            <div id="carouselExampleFade{{producto.id}}" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div id="carouselExampleFade{{producto.id}}" class="carousel slide carousel-fade"
+                                data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img [src]="producto.imagen1" class="d-block w-100" alt="...">
@@ -136,11 +147,13 @@
                                         <img [src]="producto.imagen3" class="d-block w-100" alt="...">
                                     </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleFade{{producto.id}}" role="button" data-slide="prev">
+                                <a class="carousel-control-prev" href="#carouselExampleFade{{producto.id}}"
+                                    role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselExampleFade{{producto.id}}" role="button" data-slide="next">
+                                <a class="carousel-control-next" href="#carouselExampleFade{{producto.id}}"
+                                    role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -153,10 +166,13 @@
                                     </span>{{producto.categoria}}<span class="negrita">Resolución:
                                     </span>{{producto.resolucion}}<span class="negrita">Iso:
                                     </span>{{producto.iso}}<br><span class="negrita">Peso:
-                                    </span>{{producto.peso}}<span class="negrita">Focal: </span>{{producto.focal}}<span class="negrita">Altura: </span>{{producto.altura}}</p>
-                                <p class="card-text text-center"><span class="negrita">Precio: </span><small class="precioText">{{producto.precio}}€</small>
+                                    </span>{{producto.peso}}<span class="negrita">Focal: </span>{{producto.focal}}<span
+                                        class="negrita">Altura: </span>{{producto.altura}}</p>
+                                <p class="card-text text-center"><span class="negrita">Precio: </span><small
+                                        class="precioText">{{producto.precio}}€</small>
                                 </p>
-                                <button class="btn btn-outline-primary" (click)="enviarProducto(producto)">Comprar</button>
+                                <button class="btn btn-outline-primary"
+                                    (click)="enviarProducto(producto)">Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -164,6 +180,8 @@
             </div>
         </div>
         <div>
-            <pagination-controls class="pagination" id="listing_pagination" maxSize="4" directionalLinks="true" (pageChange)="page = $event"></pagination-controls>
+            <pagination-controls class="pagination" id="listing_pagination" maxSize="4" directionalLinks="true"
+                (pageChange)="page = $event"></pagination-controls>
         </div>
+
     </div>

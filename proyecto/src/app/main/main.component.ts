@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -16,13 +17,20 @@ export class MainComponent implements OnInit {
   naturaleza: string;
   retrato: string;
   macro: string;
+  tecnicas: any[];
+  productos: any;
+  precioMin: number;
+  precioMax: number;
+  mostrar: boolean;
 
 
-  constructor(private homeservice: HomeService) {
+  constructor(private homeservice: HomeService, private router: Router) {
     this.tecnicanaturaleza = false;
     this.tecnicanocturna = false;
     this.tecnicaretrato = false;
     this.tecnicamacro = false;
+    this.tecnicas = [];
+    this.mostrar = false;
   }
 
   ngOnInit() {
@@ -33,66 +41,98 @@ export class MainComponent implements OnInit {
   manejarTecnicaNaturaleza(event) {
     if (event.target.checked) {
       this.tecnicanaturaleza = true;
+      this.naturaleza = 'tecnicanaturaleza';
+      this.tecnicas.push(this.naturaleza);
     } else {
       this.tecnicanaturaleza = false;
     }
 
-    if (this.tecnicanaturaleza === true) {
-      this.naturaleza = 'tecnicanaturaleza';
-    }
   }
 
 
   manejarTecnicaNocturna(event) {
     if (event.target.checked) {
       this.tecnicanocturna = true;
+      this.nocturna = 'tecnicanocturna';
+      this.tecnicas.push(this.nocturna);
     } else {
       this.tecnicanocturna = false;
+      this.tecnicas.pop();
     }
 
-    if (this.tecnicanocturna === true) {
-      this.nocturna = 'tecnicanocturna';
-    }
   }
 
   manejarTecnicaRetrato(event) {
     if (event.target.checked) {
       this.tecnicaretrato = true;
+      this.retrato = 'tecnicaretrato';
+      this.tecnicas.push(this.retrato);
     } else {
       this.tecnicanocturna = false;
     }
 
-    if (this.tecnicaretrato === true) {
-      this.retrato = 'tecnicaretrato';
-    }
   }
 
   manejarTecnicaMacro(event) {
     if (event.target.checked) {
       this.tecnicamacro = true;
+      this.macro = 'tecnicamacro';
+      this.tecnicas.push(this.macro);
     } else {
       this.tecnicanocturna = false;
     }
 
-    if (this.tecnicamacro === true) {
-      this.macro = 'tecnicamacro';
-    }
+  }
+
+  async manejarCheckPrecio($event) {
+    switch (parseInt($event.target.value)) {
+      case 0:
+        this.precioMin = 10;
+        this.precioMax = 260;
+        break;
+
+      case 1:
+        this.precioMin = 260;
+        this.precioMax = 500;
+        break;
+
+      case 2:
+        this.precioMin = 550;
+        this.precioMax = 1000;
+        break;
+
+      case 3:
+        this.precioMin = 1100;
+        this.precioMax = 2100;
+        break;
+
+      default:
+
+    };
   }
 
 
-
-
-
-  manejarResultado() {
+  async manejarResultado() {
     const tecnicas = {
-      tecnicas: [this.nocturna, this.naturaleza, this.retrato, this.macro]
+      tecnicas: this.tecnicas,
+      precioMin: this.precioMin,
+      precioMax: this.precioMax,
     }
-    this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    console.log(this.tecnicas)
+    await this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    this.productos = await this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    localStorage.setItem('cuestionario', JSON.stringify(this.productos));
+    if (this.productos === null) {
+      this.mostrar = true;
+    } else {
+      this.router.navigate(['/productos']);
+    }
+
   }
 
 
-  /*  const response = await this.productosService.getByMarcaObjetivo($event.target.value);
-   this.productos = response;
-   console.log(response)
-  */
+
+
+
+
 }
