@@ -10,11 +10,14 @@ export class UsuarioService {
 
   baseUrl: string;
   baseUrlPedidos: string;
+  baseUrlDetalleCurso: string;
+
 
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/users";
     this.baseUrlPedidos = "http://localhost:3000/api/detallePedidos";
+    this.baseUrlDetalleCurso = 'http://localhost:3000/api/detalleCursos';
 
   }
 
@@ -55,6 +58,14 @@ export class UsuarioService {
   }
 
 
-
+  //recuperamos informacion de pedidos cursos
+  getAllDetalleCurso() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'user-token': localStorage.getItem('token')
+      })
+    }
+    return this.httpClient.get(`${this.baseUrlDetalleCurso}`, httpOptions).toPromise();
+  }
 
 }

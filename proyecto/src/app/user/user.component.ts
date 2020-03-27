@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
@@ -11,8 +11,9 @@ export class UserComponent implements OnInit {
 
   usuario: any;
   pedidos: any;
+  cursos: any;
 
-  constructor(private usuarioService: UsuarioService, private activatedRoute: ActivatedRoute) { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     //recuperamos usuarios 
@@ -23,6 +24,7 @@ export class UserComponent implements OnInit {
       .catch(err => {
         console.log(err)
       });
+
     //recuperamos pedidos de usuario
     this.usuarioService.getPedidosUser()
       .then(response => {
@@ -30,7 +32,17 @@ export class UserComponent implements OnInit {
       })
       .catch(err => {
         console.log(err)
+      });
+
+    //recuperamos los cursos
+    this.usuarioService.getAllDetalleCurso()
+      .then(response => {
+        this.cursos = response;
+        console.log(this.cursos)
       })
+      .catch(err => {
+        console.log(err)
+      });
 
   }
 

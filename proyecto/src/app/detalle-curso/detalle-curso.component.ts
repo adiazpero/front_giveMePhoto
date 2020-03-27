@@ -23,10 +23,13 @@ export class DetalleCursoComponent implements OnInit {
   }
 
 
-
   clickAddCurso(pCurso) {
     this.cursosService.enviarPedidoCurso(pCurso);
   }
+
+
+
+
 
 
 }
