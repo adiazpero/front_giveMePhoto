@@ -16,6 +16,8 @@ export class MainComponent implements OnInit {
   naturaleza: string;
   retrato: string;
   macro: string;
+  tecnicas: any[];
+  productos: any;
 
 
   constructor(private homeservice: HomeService) {
@@ -23,6 +25,7 @@ export class MainComponent implements OnInit {
     this.tecnicanocturna = false;
     this.tecnicaretrato = false;
     this.tecnicamacro = false;
+    this.tecnicas = [];
   }
 
   ngOnInit() {
@@ -39,6 +42,9 @@ export class MainComponent implements OnInit {
 
     if (this.tecnicanaturaleza === true) {
       this.naturaleza = 'tecnicanaturaleza';
+      this.tecnicas.push(this.naturaleza);
+    } else {
+      this.tecnicas.pop();
     }
   }
 
@@ -48,10 +54,14 @@ export class MainComponent implements OnInit {
       this.tecnicanocturna = true;
     } else {
       this.tecnicanocturna = false;
+      this.tecnicas.pop();
     }
 
     if (this.tecnicanocturna === true) {
       this.nocturna = 'tecnicanocturna';
+      this.tecnicas.push(this.nocturna);
+    } else {
+      this.tecnicas.pop();
     }
   }
 
@@ -64,6 +74,9 @@ export class MainComponent implements OnInit {
 
     if (this.tecnicaretrato === true) {
       this.retrato = 'tecnicaretrato';
+      this.tecnicas.push(this.retrato);
+    } else {
+      this.tecnicas.pop();
     }
   }
 
@@ -76,23 +89,27 @@ export class MainComponent implements OnInit {
 
     if (this.tecnicamacro === true) {
       this.macro = 'tecnicamacro';
+      this.tecnicas.push(this.macro);
+    } else {
+      this.tecnicas.pop();
     }
+
   }
 
 
-
-
-
-  manejarResultado() {
+  async manejarResultado() {
     const tecnicas = {
-      tecnicas: [this.nocturna, this.naturaleza, this.retrato, this.macro]
+      tecnicas: this.tecnicas,
     }
-    this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    await this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    const response = await this.homeservice.enviarCuestionarioTecnica(tecnicas);
+    this.productos = response;
+    console.log(this.productos)
+
   }
 
 
-  /*  const response = await this.productosService.getByMarcaObjetivo($event.target.value);
-   this.productos = response;
-   console.log(response)
-  */
+
+
+
 }
