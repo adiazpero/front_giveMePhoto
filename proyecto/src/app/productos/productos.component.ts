@@ -22,9 +22,7 @@ export class ProductosComponent implements OnInit {
 
   }
 
-  anyFunction() {
-    console.log('anyfunction en productos')
-  }
+
 
   ngOnInit() {
 

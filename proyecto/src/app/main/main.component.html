@@ -23,13 +23,14 @@
                 <th scope="col">Técnica macro</th>
             </tr>
         </thead>
+
         <tbody>
             <tr>
                 <th scope="row">Tecnica fotográfica</th>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox"></td>
+                <td><input id="tecnicanaturaleza" value="tecnicanaturaleza" type="checkbox" (change)="manejarTecnicaNaturaleza($event)"></td>
+                <td><input id="tecnicanocturna" value="tecnicanocturna" type="checkbox" (change)="manejarTecnicaNocturna($event)"></td>
+                <td><input id="tecnicaretrato" value="tecnicaretrato" type="checkbox" (change)="manejarTecnicaRetrato($event)"></td>
+                <td><input id="tecnicamacro" value="tecnicamacro" type="checkbox" (change)="manejarTecnicaMacro($event)"></td>
             </tr>
         </tbody>
         <thead>
@@ -52,8 +53,9 @@
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-primary btn-lg btn-block">Ver resultado</button>
-</div>
+    <input type="button" class="btn btn-dark btn-lg btn-block" (click)="manejarResultado()">Ver resultado</div>
+
+
 
 <!-- Section Blog -->
 <section id="blog">
