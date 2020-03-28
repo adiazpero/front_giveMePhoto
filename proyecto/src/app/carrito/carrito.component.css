@@ -27,3 +27,7 @@ img {
 .boton-primario {
     margin-bottom: 50px;
 }
+
+.msgPedidoRealizado, .msgNoProductos {
+    font-size: 2em;
+}
