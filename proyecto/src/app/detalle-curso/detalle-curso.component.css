@@ -1,3 +1,7 @@
 .card-curso {
     padding: 50px 0;
 }
+
+img {
+    border-radius: 5%;
+}
