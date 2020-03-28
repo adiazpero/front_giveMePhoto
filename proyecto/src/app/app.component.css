@@ -54,9 +54,6 @@
     font-size: 15px;
 }
 
-.iconos i {
-    color: rgb(63, 62, 62);
-}
 
 footer {
     position: absolute;
@@ -94,3 +91,4 @@ footer ul li a {
     background: rgb(17, 17, 17);
     color: grey;
 }
+

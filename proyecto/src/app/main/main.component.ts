@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
   productos: any;
   precioMin: number;
   precioMax: number;
-  mostrar: boolean;
+  mostrarNoResultados: boolean;
 
 
   constructor(private homeservice: HomeService, private router: Router) {
@@ -30,7 +30,7 @@ export class MainComponent implements OnInit {
     this.tecnicaretrato = false;
     this.tecnicamacro = false;
     this.tecnicas = [];
-    this.mostrar = false;
+    this.mostrarNoResultados = false;
   }
 
   ngOnInit() {
@@ -123,7 +123,7 @@ export class MainComponent implements OnInit {
     this.productos = await this.homeservice.enviarCuestionarioTecnica(tecnicas);
     localStorage.setItem('cuestionario', JSON.stringify(this.productos));
     if (this.productos === null) {
-      this.mostrar = true;
+      this.mostrarNoResultados = true;
     } else {
       this.router.navigate(['/productos']);
     }

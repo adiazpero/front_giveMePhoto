@@ -125,7 +125,7 @@
 
     <div class="productos">
         <div class="row">
-            <h2 class="tituloseccion">Cámaras</h2><input type="button" (click)="borrarCuestionario()" *ngIf="mostrar"
+            <input type="button" (click)="borrarCuestionario()" *ngIf="mostrar"
                 value="Borrar el filtro del cuestionario">
             <div class="card-group float-right col-lg-12">
                 <div *ngFor="let producto of productos | paginate: {id:'listing_pagination',
