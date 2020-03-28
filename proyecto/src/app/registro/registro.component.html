@@ -20,28 +20,37 @@
         <div class="col-12 col-md-6 register">
             <h3>REGISTRATE</h3>
             <form [formGroup]="formRegistro" (ngSubmit)="onSubmitRegistro()">
+
                 <div>
                     <input type="text" placeholder="nombre" name="nombre" formControlName="nombre">
+                    <p class="error" *ngIf="formRegistro.controls.nombre.errors?.minlength && formRegistro.controls.nombre.touched">El campo nombre debe tener una longitud minima de 3 caracteres</p>
+                    <p class="error" *ngIf="formRegistro.controls.nombre.errors?.required && formRegistro.controls.nombre.touched">El campo nombre es obligatorio</p>
                 </div>
+
                 <div>
                     <input type="text" placeholder="apellidos" name="apellidos" formControlName="apellidos">
+                    <p class="error" *ngIf="formRegistro.controls.apellidos.errors?.minlength && formRegistro.controls.apellidos.touched">El campo apellidos debe tener una longitud minima de 3 caracteres</p>
+                    <p class="error" *ngIf="formRegistro.controls.apellidos.errors?.required && formRegistro.controls.apellidos.touched">El campo apellidos es obligatorio</p>
                 </div>
+
                 <div>
                     <input type="text" placeholder="email" name="email" formControlName="email">
+                    <p class="error" *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.touched">El email tiene que tener un formato valido a@a.com</p>
                 </div>
                 <div>
                     <input type="password" placeholder="contraseña" name="contraseña" formControlName="password">
+                    <p class="error" *ngIf="formRegistro.controls.password.errors?.required && formRegistro.controls.password.touched">La contraseña es obligatoria</p>
                 </div>
                 <div>
-                    <input type="password" placeholder="repite tu contraseña" name="repitecontraseña" formControlName="password">
+                    <input type="password" placeholder="repite tu contraseña" name="repitepassword" formControlName="repitepassword">
+                    <p class="error" *ngIf="formRegistro.controls.repitepassword.errors?.required && formRegistro.controls.repitepassword.touched">Repite tu contraseña</p>
                 </div>
-
                 <div>
-                    <input type="submit" class="btn boton-primario" value="REGISTRATE">
+                    <input type="submit" class="btn boton-primario" [disabled]="!formRegistro.valid" value="REGISTRATE">
                     <!--  <p>*La contraseña debe tener 8 o más caracteres y debe contener al menos un número, una letra en minúscula y una letra en mayúscula. Los caracteres válidos son: A-Z, a-z, 0-9, @ ! # $ % & ' * + - / = ? ^ _ ` {} ~</p> -->
                 </div>
 
-                <p *ngIf="mostrar">El registro se ha realizado correctamente</p>
+                <p *ngIf="mostrarRegistro">El registro se ha realizado correctamente</p>
             </form>
         </div>
 
@@ -50,15 +59,17 @@
             <h3>ACCEDER A CUENTA</h3>
             <form [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
                 <div>
-                    <input class="usuario" type="text" placeholder="email@..." name="usuario" formControlName="email">
+                    <input class="usuario" type="text" placeholder="email@..." name="email" formControlName="email">
+                    <p class="error" *ngIf="formLogin.controls.email.errors?.required && formLogin.controls.email.touched">El email tiene que tener un formato valido a@a.com</p>
                 </div>
                 <div>
-                    <input type="password" placeholder="contraseña..." name="contraseña" formControlName="password">
+                    <input type="password" placeholder="contraseña..." name="password" formControlName="password">
+                    <p class="error" *ngIf="formLogin.controls.password.errors?.required && formLogin.controls.password.touched">La contraseña es obligatoria</p>
                 </div>
                 <div>
                     <input type="submit" class="btn boton-primario" value="ACCEDE">
-
                 </div>
+                <p *ngIf="mostrarLogin">Te has logado correctamente</p>
             </form>
         </div>
 
