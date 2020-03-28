@@ -37,10 +37,8 @@ export class ProductosComponent implements OnInit {
       //Productos: filtrar por categorias => camaras/objetivos/accesorios
       this.activatedRoute.params.subscribe(async params => {
         if (!params.categoria) {
-          console.log(2)
           this.productos = await this.productosService.getAll();
         } else {
-          console.log(3)
           this.productos = await this.productosService.getByCategoria(params.categoria);
         }
 
