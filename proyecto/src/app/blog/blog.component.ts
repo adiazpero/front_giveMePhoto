@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { BlogService } from '../blog.service';
+import { Post } from '../models/post';
+
 
 @Component({
   selector: 'app-blog',
@@ -8,9 +10,24 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  listaPosts: Post[];
+  listaPostsLateral: Post[];
+
+  constructor(private blogservice: BlogService) {
+
+  }
+
 
   ngOnInit() {
+    this.listaPosts = this.blogservice.getAll();
+
+    this.listaPostsLateral = this.blogservice.getAllLateral();
   }
+
+
+
+
+
+
 
 }

@@ -1,20 +1,31 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h3>UNA HISTORIA RECIENTE DE LA FOTOGRAFÍA Y A LA VEZ UN MANUAL PRÁCTICO REPLETO DE INNUMERABLES ANÉCDOTAS, BASADO EN LAS LECCIONES DE LOS GRANDES MAESTROS.</h3>
-            <div class="imagen">
-                <img src="https://scontent-yyz1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.1.1080.1080a/s640x640/75458007_516826385589432_4890218617309174707_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=VrHR6T4Yu8AAX9Hgafe&oh=c39d8141af4448f770181abda47331c9&oe=5EAE2FA9"
-                    alt="">
-            </div>
+        <div class="col-12 col-md-9">
+            <div class="row" *ngFor="let post of listaPosts">
+                <div class="col-12 post">
+                    <h3>{{post.titulo}}</h3>
+                    <div>
+                        <img [src]="post.imagen">
+                    </div>
 
-            <div class="col-12">
-                <p class="parrafo">De la mano de Robert Capa, cuya obra y milagros brotan como un hilo conductor a lo largo de este ensayo concebido durante veinticinco años, ‘Ayúdame a mirar’ repasa los requisitos que hace falta para aprender a construir y a compartir
-                    historias visuales. No está solo. Cientos de fotógrafos añaden sus testimonios en un libro repleto de citas y anécdotas. La vocación, la elección del tema, la anatomía del acto fotográfico, la ética, la edición gráfica, las consultas
-                    legales, la venta y, para finalizar, predicciones auspiciadas por los expertos así como las fuentes para financiar tu propio trabajo con becas y ayudas de todo tipo son algunos de los aspectos de este libro. En él encontrarás consejos,
-                    historias, inspiración, análisis, estrategia y conocimientos fácilmente aplicables hacen de esta “biblia del reportaje gráfico” una obra de consulta amable, práctica y entretenida para los profesionales, los aprendices y los curiosos,
-                    en palabras de Mariano López, el director de la revista VIAJAR. El día de Sant Jordi o el día del libro, el 23 de abril de 2019, cuando apareció, fue número 1 en ventas de libros fotográficos en Amazon y en otras librerías y se mantuvo
-                    durante toda la jornada entre los diez de no ficción más vendidos a nivel general, alcanzando incluso el número 3 del ranking. He volcado en él mucho de lo que he aprendido después de cuatro décadas ejerciendo como docente. La mayor
-                    parte de preguntas que se me han hecho encuentran una respuesta en 548 páginas que contienen fotografías históricas y numerosos temas para el debate.</p>
+                    <div>
+                        <p class="parrafo">{{post.texto}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-md-3">
+            <div class="post-lateral" *ngFor="let post of listaPostsLateral">
+                <h5>{{post.titulo}}</h5>
+                <div>
+                    <img [src]="post.imagen">
+                </div>
+
+                <div class="col-12">
+                    <p>{{post.texto}}</p>
+                </div>
             </div>
         </div>
     </div>
