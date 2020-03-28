@@ -82,16 +82,15 @@ export class RegistroComponent implements OnInit {
         localStorage.setItem('token', response['success']);
         this.mostrarLogin = true;
         this.formLogin.reset();
+
         this.usuarioService.getUserById()
           .then(response => {
             localStorage.setItem('usuario', JSON.stringify(response));
           })
           .catch(err => {
-            console.log(err)
           });
       })
       .catch(err => {
-        console.log(err)
       });
 
   }

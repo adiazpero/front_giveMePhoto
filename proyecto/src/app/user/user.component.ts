@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,17 +14,21 @@ export class UserComponent implements OnInit {
   pedidos: any;
   cursos: any;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit() {
     //recuperamos usuarios 
-    this.usuarioService.getUserById()
-      .then(response => {
-        this.usuario = response;
-      })
-      .catch(err => {
-        console.log(err)
-      });
+    if (localStorage.getItem('usuario')) {
+      this.usuario = JSON.parse(localStorage.getItem('usuario'));
+    }
+
+    /*     this.usuarioService.getUserById()
+          .then(response => {
+            this.usuario = response;
+          })
+          .catch(err => {
+            console.log(err)
+          }); */
 
     //recuperamos pedidos de usuario
     this.usuarioService.getPedidosUser()
