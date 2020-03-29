@@ -93,3 +93,13 @@
     border: 1px solid #212122;
     color: #fff
 }
+
+i{
+    margin-left: 0.5em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+i:hover{
+    transform: rotate(90deg);
+}

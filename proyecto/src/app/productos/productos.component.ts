@@ -15,12 +15,20 @@ export class ProductosComponent implements OnInit {
   page: Number = 1;
   @Output() productoSeleccionado: EventEmitter<[]>;
   mostrar: boolean;
+  mostrarFiltroCamaras: boolean;
+  mostrarFiltroObjetivos: boolean;
+  mostrarFiltroAccesorios: boolean;
+  mostrarFiltroPrecio: boolean;
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router, private carritoService: CarritoService) {
     this.productoSeleccionado = new EventEmitter();
     this.productos = new Array<any>();
     this.mostrar = false;
+    this.mostrarFiltroCamaras = false;
+    this.mostrarFiltroObjetivos = false;
+    this.mostrarFiltroAccesorios = false;
+    this.mostrarFiltroPrecio = false;
 
   }
 
@@ -191,6 +199,43 @@ export class ProductosComponent implements OnInit {
         this.productos = response;
     };
   }
+
+  manejarMostrarFiltroCamaras() {
+    if (this.mostrarFiltroCamaras != true) {
+      this.mostrarFiltroCamaras = true;
+    } else {
+      this.mostrarFiltroCamaras = false;
+    }
+
+  }
+
+  manejarMostrarFiltroObjetivos() {
+    if (this.mostrarFiltroObjetivos != true) {
+      this.mostrarFiltroObjetivos = true;
+    } else {
+      this.mostrarFiltroObjetivos = false;
+    }
+
+  }
+
+  manejarMostrarFiltroAccesorios() {
+    if (this.mostrarFiltroAccesorios != true) {
+      this.mostrarFiltroAccesorios = true;
+    } else {
+      this.mostrarFiltroAccesorios = false;
+    }
+
+  }
+
+  manejarMostrarFiltroPrecio() {
+    if (this.mostrarFiltroPrecio != true) {
+      this.mostrarFiltroPrecio = true;
+    } else {
+      this.mostrarFiltroPrecio = false;
+    }
+
+  }
+
 
 
 }
