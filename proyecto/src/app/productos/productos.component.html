@@ -1,38 +1,36 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-sm-3">
-            <div class="filtro-">
+        <div class="col-12 col-md-3">
+            <div class="filtro">
 
-                <h2>Filtro</h2>
+
                 <h3 class="titulofiltro">Cámaras</h3>
                 <ul class="filtros">
                     <li class="tituloLi">Marca</li>
 
-                    <input name="marca" value="nikon" type="radio" id="nikon" (change)="manejarCheckMarca($event)" /><span>Nikon</span>
+                    <input name="marca" value="nikon" type="radio" id="nikon" (change)="manejarCheckMarca($event)" /><span> Nikon</span>
                     <br>
-                    <input name="marca" value="canon " type="radio" id="canon" (change)="manejarCheckMarca($event)" /><span>Canon</span>
+                    <input name="marca" value="canon " type="radio" id="canon" (change)="manejarCheckMarca($event)" /><span> Canon</span>
                     <br>
-                    <input name="marca" value="sony " type="radio" id="Sony" (change)="manejarCheckMarca($event)" /><span>Sony</span>
+                    <input name="marca" value="sony " type="radio" id="Sony" (change)="manejarCheckMarca($event)" /><span> Sony</span>
                     <br>
-                    <input name="marca" value="olympus " type="radio" id="Olympus" (change)="manejarCheckMarca($event)" /><span>Olympus</span>
+                    <input name="marca" value="olympus " type="radio" id="Olympus" (change)="manejarCheckMarca($event)" /><span> Olympus</span>
 
 
                     <li class="tituloLi">Resolución</li>
 
-                    <input value="0" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /> <span>12mp
-                    - 16mp</span>
+                    <input value="0" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /> <span> 12mp - 16mp</span>
                     <br>
-                    <input value="1" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>20mp -
-                    24mp</span>
+                    <input value="1" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span> 20mp - 24mp</span>
                     <br>
-                    <input value="2" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>>35mp</span>
+                    <input value="2" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span> >35mp</span>
 
 
                     <li class="tituloLi">Iso</li>
 
-                    <input value="0" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>6400 - 12800</span>
+                    <input value="0" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span> 6400 - 12800</span>
                     <br>
-                    <input value="1" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>25600 - 51300</span>
+                    <input value="1" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span> 25600 - 51300</span>
                     <br>
                     <input value="2" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>> 100.000</span>
 
@@ -48,24 +46,24 @@
                     <li class="tituloLi">Marca</li>
 
                     <input value="nikkor" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
-                    Nikkor</span>
+                     Nikkor</span>
                     <br>
                     <input value="canon" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
-                    Canon</span>
+                     Canon</span>
                     <br>
                     <input value="sony" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
-                    Sony</span>
+                     Sony</span>
                     <br>
                     <input value="olympus" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
-                    Olympus</span>
+                     Olympus</span>
 
 
 
                     <li class="tituloLi">Focal</li>
 
-                    <input value="0" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>16-24 mm</span>
+                    <input value="0" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span> 16-24 mm</span>
                     <br>
-                    <input value="1" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>24-50 mm</span>
+                    <input value="1" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span> 24-50 mm</span>
                     <br>
                     <input value="2" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>> 85 mm</span>
                     <br>
@@ -81,23 +79,23 @@
                 <ul class="filtros">
                     <li class="tituloLi">Marca</li>
 
-                    <input value="k&f" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>K&F</span>
+                    <input value="k&f" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span> K&F</span>
                     <br>
-                    <input value="manfroto" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Manfroto</span>
+                    <input value="manfroto" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span> Manfroto</span>
                     <br>
-                    <input value="newer" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Newer</span>
+                    <input value="newer" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span> Newer</span>
 
                 </ul>
 
                 <h3 class="titulofiltro">Rango de precio</h3>
                 <ul class="filtros">
-                    <input value="0" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>10 - 250 €
+                    <input value="0" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 10 - 250 €
                 </span>
                     <br>
-                    <input value="1" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>275 - 500
+                    <input value="1" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 275 - 500
                     €</span>
                     <br>
-                    <input value="2" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 550-1000
+                    <input value="2" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>  550-1000
                     €</span>
                     <br>
                     <input value="3" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 1200 - 2500
@@ -115,11 +113,11 @@
 
         <!-- PRODUCTOS -->
 
-        <div class="col-12 col-sm-9 productos">
+        <div class="col-12 col-md-9 productos">
             <div class="row">
                 <input type="button" (click)="borrarCuestionario()" *ngIf="mostrar" value="Borrar el filtro del cuestionario">
                 <div class="col-12 col-md-6 col-lg-4" *ngFor="let producto of productos | paginate: {id:'listing_pagination',
-                itemsPerPage: 6,
+                itemsPerPage: 9,
                 currentPage: page,
                 totalItems: totalrecords}">
                     <div class="card-producto">
@@ -172,11 +170,12 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <pagination-controls class="pagination" id="listing_pagination" maxSize="3" directionalLinks="true" (pageChange)="page = $event"></pagination-controls>
+            </div>
         </div>
 
 
     </div>
-    <div>
-        <pagination-controls class="pagination" id="listing_pagination" maxSize="4" directionalLinks="true" (pageChange)="page = $event"></pagination-controls>
-    </div>
+
 </div>

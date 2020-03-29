@@ -7,14 +7,14 @@
 
 .filtro {
     width: 100%;
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(250, 248, 248);
     margin: 0.8em;
-    border-radius: 10px;
+    margin-top: 20px;
+    color: black;
 }
 
-.filtro {
-    margin-top: 10px;
-    color: black;
+.filtro h3 {
+    padding-top: 50px;
 }
 
 .filtro h2 {
@@ -30,9 +30,14 @@
     margin-left: 1em;
 } */
 
+.filtros {
+    list-style-type: none;
+}
+
 .filtro .filtros,
 .filtros li {
-    margin: 0.5em 1em;
+    margin: 0.5em 0em;
+    font-size: 1.2em;
 }
 
 .filtro .filtros .tituloLi {
@@ -42,7 +47,6 @@
 
 .filtro .filtros input {
     margin-bottom: 1em;
-    margin-left: 2em;
 }
 
 .filtro .filtros .range-slider {
@@ -89,8 +93,3 @@
     border: 1px solid #212122;
     color: #fff
 }
-
-
-/* .pagination {
-    margin-left: 750px;
-} */
