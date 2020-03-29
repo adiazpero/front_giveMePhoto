@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (localStorage.getItem('usuario')) {
       this.usuario = JSON.parse(localStorage.getItem('usuario'));
-      console.log(this.usuario)
     }
 
   }
@@ -25,6 +24,7 @@ export class AppComponent implements OnInit {
   manejarCerrarSesion() {
     localStorage.removeItem('token');
     localStorage.removeItem('usuario');
+    window.location.reload();
   }
 
 }
