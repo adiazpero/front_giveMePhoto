@@ -83,9 +83,11 @@ export class RegistroComponent implements OnInit {
         this.mostrarLogin = true;
         this.formLogin.reset();
 
+
         this.usuarioService.getUserById()
           .then(response => {
             localStorage.setItem('usuario', JSON.stringify(response));
+            window.location.reload();
           })
           .catch(err => {
           });
