@@ -29,8 +29,16 @@ export class ProductosService {
   }
 
 
-  getByMarca(pMarca): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/marca/${pMarca}`).toPromise();
+  getByMarcaCamara(pMarca): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/marca/camaras/${pMarca}`).toPromise();
+  }
+
+  getByMarcaObjetivo(pMarca): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/marca/objetivos/${pMarca}`).toPromise();
+  }
+
+  getByMarcaAccesorio(pMarca): Promise<any> {
+    return this.httpClient.get(`${this.baseUrl}/marca/accesorios/${pMarca}`).toPromise();
   }
 
 
@@ -45,9 +53,7 @@ export class ProductosService {
 
 
 
-  getByMarcaObjetivo(pMarca): Promise<any> {
-    return this.httpClient.get(`${this.baseUrl}/marca/objetivos/${pMarca}`).toPromise();
-  }
+
 
 
 

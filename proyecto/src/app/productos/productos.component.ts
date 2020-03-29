@@ -14,21 +14,23 @@ export class ProductosComponent implements OnInit {
   totalRecords: number;
   page: Number = 1;
   @Output() productoSeleccionado: EventEmitter<[]>;
-  mostrar: boolean;
+  mostrarBorrarCuestionario: boolean;
   mostrarFiltroCamaras: boolean;
   mostrarFiltroObjetivos: boolean;
   mostrarFiltroAccesorios: boolean;
   mostrarFiltroPrecio: boolean;
+  mostrarDeshacerFiltro: boolean;
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router, private carritoService: CarritoService) {
     this.productoSeleccionado = new EventEmitter();
     this.productos = new Array<any>();
-    this.mostrar = false;
+    this.mostrarBorrarCuestionario = false;
     this.mostrarFiltroCamaras = false;
     this.mostrarFiltroObjetivos = false;
     this.mostrarFiltroAccesorios = false;
     this.mostrarFiltroPrecio = false;
+    this.mostrarDeshacerFiltro = false;
 
   }
 
@@ -40,7 +42,7 @@ export class ProductosComponent implements OnInit {
 
     if (localStorage.getItem('cuestionario')) {
       this.productos = JSON.parse(localStorage.getItem('cuestionario'));
-      this.mostrar = true;
+      this.mostrarBorrarCuestionario = true;
     } else {
       //Productos: filtrar por categorias => camaras/objetivos/accesorios
       this.activatedRoute.params.subscribe(async params => {
@@ -59,10 +61,12 @@ export class ProductosComponent implements OnInit {
 
   }
 
+
+
   async  borrarCuestionario() {
     localStorage.removeItem('cuestionario');
     this.productos = await this.productosService.getAll();
-    this.mostrar = false;
+    this.mostrarBorrarCuestionario = false;
   }
 
   enviarProducto(producto) {
@@ -71,36 +75,28 @@ export class ProductosComponent implements OnInit {
 
 
   async manejarCheckMarca($event) {
-    const response = await this.productosService.getByMarca($event.target.value);
-    this.productos = response;
-    //console.log(response)
+    this.productos = await this.productosService.getByMarcaCamara($event.target.value);
+    this.mostrarDeshacerFiltro = true;
   }
 
 
   async manejarCheckResolucion($event) {
-    var response = [];
+    this.mostrarDeshacerFiltro = true;
     switch (parseInt($event.target.value)) {
       case 0:
-        response = await this.productosService.getByResolucion(12, 17);
-        this.productos = response;
-        console.log(response);
+        this.productos = await this.productosService.getByResolucion(12, 17);
         break;
 
       case 1:
-        response = await this.productosService.getByResolucion(18, 25);
-        this.productos = response;
-        console.log(response);
+        this.productos = await this.productosService.getByResolucion(18, 25);
         break;
 
       case 2:
-        response = await this.productosService.getByResolucion(30, 36);
-        this.productos = response;
-        console.log(response);
+        this.productos = await this.productosService.getByResolucion(30, 36);
         break;
 
       default:
-        response = await this.productosService.getAll();
-        this.productos = response;
+        this.productos = await this.productosService.getAll();
     };
   }
 
@@ -108,96 +104,86 @@ export class ProductosComponent implements OnInit {
 
 
   async manejarCheckIso($event) {
-    var response = [];
+    this.mostrarDeshacerFiltro = true;
     switch (parseInt($event.target.value)) {
       case 0:
-        response = await this.productosService.getByIso(6300, 12900);
-        this.productos = response;
-        console.log(response);
+        this.productos = await this.productosService.getByIso(6300, 12900);
         break;
 
       case 1:
-        response = await this.productosService.getByIso(25500, 51300);
-        this.productos = response;
-        console.log(response);
+        this.productos = await this.productosService.getByIso(25500, 51300);
         break;
 
       case 2:
-        response = await this.productosService.getByIso(100000, 521300);
-        this.productos = response;
-        console.log(response);
+        this.productos = await this.productosService.getByIso(100000, 521300);
         break;
 
       default:
-        response = await this.productosService.getAll();
-        this.productos = response;
+        this.productos = await this.productosService.getAll();
     };
   }
 
 
   async manejarCheckObjetivo($event) {
-    const response = await this.productosService.getByMarcaObjetivo($event.target.value);
-    this.productos = response;
+    this.productos = await this.productosService.getByMarcaObjetivo($event.target.value);
+    this.mostrarDeshacerFiltro = true;
   }
 
 
 
   async manejarCheckFocal($event) {
-    var response = [];
+    this.mostrarDeshacerFiltro = true;
     switch (parseInt($event.target.value)) {
       case 0:
-        response = await this.productosService.getByFocal(15, 25);
-        this.productos = response;
+        this.productos = await this.productosService.getByFocal(15, 25);
         break;
 
       case 1:
-        response = await this.productosService.getByFocal(25, 51);
-        this.productos = response;
+        this.productos = await this.productosService.getByFocal(25, 51);
         break;
 
       case 2:
-        response = await this.productosService.getByFocal(52, 86);
-        this.productos = response;
+        this.productos = await this.productosService.getByFocal(52, 86);
         break;
 
       default:
-        response = await this.productosService.getAll();
-        this.productos = response;
+        this.productos = await this.productosService.getAll();
     };
   }
 
   async manejarCheckAccesorios($event) {
-    const response = await this.productosService.getByAccesorios($event.target.value);
-    this.productos = response;
+    this.productos = await this.productosService.getByMarcaAccesorio($event.target.value);
+    this.mostrarDeshacerFiltro = true;
   }
 
   async manejarCheckPrecio($event) {
-    var response = [];
+    this.mostrarDeshacerFiltro = true;
     switch (parseInt($event.target.value)) {
       case 0:
-        response = await this.productosService.getByPrecio(10, 251);
-        this.productos = response;
+        this.productos = await this.productosService.getByPrecio(10, 251);
         break;
 
       case 1:
-        response = await this.productosService.getByPrecio(275, 501);
-        this.productos = response;
+        this.productos = await this.productosService.getByPrecio(275, 501);
         break;
 
       case 2:
-        response = await this.productosService.getByPrecio(550, 1001);
-        this.productos = response;
+        this.productos = await this.productosService.getByPrecio(550, 1001);
         break;
 
       case 3:
-        response = await this.productosService.getByPrecio(1100, 2100);
-        this.productos = response;
+        this.productos = await this.productosService.getByPrecio(1100, 2100);
         break;
 
       default:
-        response = await this.productosService.getAll();
-        this.productos = response;
+        this.productos = await this.productosService.getAll();
     };
+  }
+
+  async manejarDeshacerFiltro() {
+    this.mostrarDeshacerFiltro = false;
+    this.productos = await this.productosService.getAll();
+
   }
 
   manejarMostrarFiltroCamaras() {

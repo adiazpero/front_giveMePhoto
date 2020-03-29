@@ -3,9 +3,15 @@
         <div class="col-12 col-md-3">
             <div class="filtro">
 
+                <!-- boton borrar cuestionario -->
+                <div>
+                    <h4 class="titulofiltro text-center" *ngIf="mostrarBorrarCuestionario">Borrar filtro cuestionario<i
+                            (click)="borrarCuestionario()" class="fas fa-trash-alt"></i></h4>
+                </div>
+                <!-- fin -->
 
-                <h3 class="titulofiltro">Cámaras<i (click)="manejarMostrarFiltroCamaras()"
-                        class="fas fa-plus"></i></h3>
+                <!-- Filtro Cámaras -->
+                <h3 class="titulofiltro">Cámaras<i (click)="manejarMostrarFiltroCamaras()" class="fas fa-plus"></i></h3>
                 <ul class="filtros" *ngIf="mostrarFiltroCamaras">
                     <li class="tituloLi">Marca</li>
 
@@ -45,13 +51,12 @@
                     <input value="2" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>> 100.000</span>
 
                 </ul>
+                <!-- fin  -->
 
                 <!-- Filtro Objetivos -->
 
-
-
-                <h3 class="titulofiltro">Objetivos <i (click)="manejarMostrarFiltroObjetivos()"
-                        class="fas fa-plus"></i></h3>
+                <h3 class="titulofiltro">Objetivos <i (click)="manejarMostrarFiltroObjetivos()" class="fas fa-plus"></i>
+                </h3>
                 <ul class="filtros" *ngIf="mostrarFiltroObjetivos">
 
                     <li class="tituloLi">Marca</li>
@@ -88,7 +93,7 @@
 
                 </ul>
 
-
+                <!-- fin -->
 
 
                 <!-- filtro por accesorios -->
@@ -101,8 +106,8 @@
                     <input value="k&f" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>
                         K&F</span>
                     <br>
-                    <input value="manfroto" type="radio" name="accesorios"
-                        (change)="manejarCheckAccesorios($event)" /><span> Manfroto</span>
+                    <input value="manfrotto" type="radio" name="accesorios"
+                        (change)="manejarCheckAccesorios($event)" /><span> Manfrotto</span>
                     <br>
                     <input value="newer" type="radio" name="accesorios"
                         (change)="manejarCheckAccesorios($event)" /><span> Newer</span>
@@ -126,18 +131,21 @@
                         2500
                         €</span>
                 </ul>
+
+                <h4 class="titulofiltro text-center" *ngIf="mostrarDeshacerFiltro">Borrar filtro <i
+                        (click)="manejarDeshacerFiltro()" class="fas fa-trash-alt"></i></h4>
             </div>
         </div>
 
+        <!-- fin -->
 
         <!-- PRODUCTOS -->
 
         <div class="col-12 col-md-9 productos">
             <div class="row">
-                <input type="button" (click)="borrarCuestionario()" *ngIf="mostrar"
-                    value="Borrar el filtro del cuestionario">
+
                 <div class="col-12 col-md-6 col-lg-4" *ngFor="let producto of productos | paginate: {id:'listing_pagination',
-                itemsPerPage: 9,
+                itemsPerPage: 6,
                 currentPage: page,
                 totalItems: totalrecords}">
                     <div class="card-producto">
@@ -168,8 +176,6 @@
                                 </a>
                             </div>
 
-
-                            <!-- <img class="card-img-top" [src]="producto.imagen1" alt="Card image cap"> -->
                             <div class="text-center">
                                 <h5>{{producto.marca}} {{producto.modelo}}</h5>
                                 <p>Ver + ></p>
@@ -198,8 +204,5 @@
                     (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
             </div>
         </div>
-
-
     </div>
-
 </div>
