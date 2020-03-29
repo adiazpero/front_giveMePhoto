@@ -1,141 +1,131 @@
-<div class="pagina">
-    <div class="float-left">
-        <div class="filtro">
-            <hr>
-            <h2>Filtro</h2>
-            <h3 class="titulofiltro">Cámaras</h3>
-            <ul class="filtros">
-                <li class="tituloLi">Marca</li>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-sm-3">
+            <div class="filtro-">
 
-                <input name="marca" value="nikon" type="radio" id="nikon"
-                    (change)="manejarCheckMarca($event)" /><span>Nikon</span>
-                <br>
-                <input name="marca" value="canon " type="radio" id="canon"
-                    (change)="manejarCheckMarca($event)" /><span>Canon</span>
-                <br>
-                <input name="marca" value="sony " type="radio" id="Sony"
-                    (change)="manejarCheckMarca($event)" /><span>Sony</span>
-                <br>
-                <input name="marca" value="olympus " type="radio" id="Olympus"
-                    (change)="manejarCheckMarca($event)" /><span>Olympus</span>
+                <h2>Filtro</h2>
+                <h3 class="titulofiltro">Cámaras</h3>
+                <ul class="filtros">
+                    <li class="tituloLi">Marca</li>
+
+                    <input name="marca" value="nikon" type="radio" id="nikon" (change)="manejarCheckMarca($event)" /><span>Nikon</span>
+                    <br>
+                    <input name="marca" value="canon " type="radio" id="canon" (change)="manejarCheckMarca($event)" /><span>Canon</span>
+                    <br>
+                    <input name="marca" value="sony " type="radio" id="Sony" (change)="manejarCheckMarca($event)" /><span>Sony</span>
+                    <br>
+                    <input name="marca" value="olympus " type="radio" id="Olympus" (change)="manejarCheckMarca($event)" /><span>Olympus</span>
 
 
-                <li class="tituloLi">Resolución</li>
+                    <li class="tituloLi">Resolución</li>
 
-                <input value="0" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /> <span>12mp
+                    <input value="0" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /> <span>12mp
                     - 16mp</span>
-                <br>
-                <input value="1" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>20mp -
+                    <br>
+                    <input value="1" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>20mp -
                     24mp</span>
-                <br>
-                <input value="2" type="radio" name="resolucion"
-                    (change)="manejarCheckResolucion($event)" /><span>>35mp</span>
+                    <br>
+                    <input value="2" type="radio" name="resolucion" (change)="manejarCheckResolucion($event)" /><span>>35mp</span>
 
 
-                <li class="tituloLi">Iso</li>
+                    <li class="tituloLi">Iso</li>
 
-                <input value="0" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>6400 - 12800</span>
-                <br>
-                <input value="1" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>25600 - 51300</span>
-                <br>
-                <input value="2" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>> 100.000</span>
+                    <input value="0" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>6400 - 12800</span>
+                    <br>
+                    <input value="1" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>25600 - 51300</span>
+                    <br>
+                    <input value="2" type="radio" name="iso" (change)="manejarCheckIso($event)" /><span>> 100.000</span>
 
-            </ul>
+                </ul>
 
-            <!-- Filtro Objetivos -->
+                <!-- Filtro Objetivos -->
 
 
 
-            <h3 class="titulofiltro">Objetivos</h3>
-            <ul class="filtros">
+                <h3 class="titulofiltro">Objetivos</h3>
+                <ul class="filtros">
 
-                <li class="tituloLi">Marca</li>
+                    <li class="tituloLi">Marca</li>
 
-                <input value="nikkor" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                    <input value="nikkor" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Nikkor</span>
-                <br>
-                <input value="canon" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                    <br>
+                    <input value="canon" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Canon</span>
-                <br>
-                <input value="sony" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
+                    <br>
+                    <input value="sony" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Sony</span>
-                <br>
-                <input value="olympus" type="radio" name="marcaObjetivo"
-                    (change)="manejarCheckObjetivo($event)" /><span>
+                    <br>
+                    <input value="olympus" type="radio" name="marcaObjetivo" (change)="manejarCheckObjetivo($event)" /><span>
                     Olympus</span>
 
 
 
-                <li class="tituloLi">Focal</li>
+                    <li class="tituloLi">Focal</li>
 
-                <input value="0" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>16-24 mm</span>
-                <br>
-                <input value="1" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>24-50 mm</span>
-                <br>
-                <input value="2" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>> 85 mm</span>
-                <br>
+                    <input value="0" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>16-24 mm</span>
+                    <br>
+                    <input value="1" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>24-50 mm</span>
+                    <br>
+                    <input value="2" type="radio" name="focal" (change)="manejarCheckFocal($event)" /><span>> 85 mm</span>
+                    <br>
 
-            </ul>
-
-
+                </ul>
 
 
-            <!-- filtro por accesorios -->
 
-            <h3 class="titulofiltro">Accesorios</h3>
-            <ul class="filtros">
-                <li class="tituloLi">Marca</li>
 
-                <input value="k&f" type="radio" name="accesorios"
-                    (change)="manejarCheckAccesorios($event)" /><span>K&F</span>
-                <br>
-                <input value="manfroto" type="radio" name="accesorios"
-                    (change)="manejarCheckAccesorios($event)" /><span>Manfroto</span>
-                <br>
-                <input value="newer" type="radio" name="accesorios"
-                    (change)="manejarCheckAccesorios($event)" /><span>Newer</span>
+                <!-- filtro por accesorios -->
 
-            </ul>
+                <h3 class="titulofiltro">Accesorios</h3>
+                <ul class="filtros">
+                    <li class="tituloLi">Marca</li>
 
-            <h3 class="titulofiltro">Rango de precio</h3>
-            <ul class="filtros">
-                <input value="0" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>10 - 250 €
+                    <input value="k&f" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>K&F</span>
+                    <br>
+                    <input value="manfroto" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Manfroto</span>
+                    <br>
+                    <input value="newer" type="radio" name="accesorios" (change)="manejarCheckAccesorios($event)" /><span>Newer</span>
+
+                </ul>
+
+                <h3 class="titulofiltro">Rango de precio</h3>
+                <ul class="filtros">
+                    <input value="0" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>10 - 250 €
                 </span>
-                <br>
-                <input value="1" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>275 - 500
+                    <br>
+                    <input value="1" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span>275 - 500
                     €</span>
-                <br>
-                <input value="2" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 550-1000
+                    <br>
+                    <input value="2" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 550-1000
                     €</span>
-                <br>
-                <input value="3" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 1200 - 2500
+                    <br>
+                    <input value="3" type="radio" name="precio" (change)="manejarCheckPrecio($event)" /><span> 1200 - 2500
                     €</span>
 
-                <!-- <section class="range-slider">
+                    <!-- <section class="range-slider">
                     <span class="rangeValues"></span>
                     <input value="0" min="0" max="1000" step="100" type="range">
                     <input value="2500" min="1050" max="2500" step="100" type="range">
                 </section> -->
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
 
 
-    <!-- PRODUCTOS -->
+        <!-- PRODUCTOS -->
 
-    <div class="productos">
-        <div class="row">
-            <input type="button" (click)="borrarCuestionario()" *ngIf="mostrar"
-                value="Borrar el filtro del cuestionario">
-            <div class="card-group float-right col-lg-12">
-                <div *ngFor="let producto of productos | paginate: {id:'listing_pagination',
+        <div class="col-12 col-sm-9 productos">
+            <div class="row">
+                <input type="button" (click)="borrarCuestionario()" *ngIf="mostrar" value="Borrar el filtro del cuestionario">
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let producto of productos | paginate: {id:'listing_pagination',
                 itemsPerPage: 6,
                 currentPage: page,
                 totalItems: totalrecords}">
-                    <div class="card col-lg-12 col-md-8 col-sm-4">
+                    <div class="card-producto">
+                        <!-- crear caja aqui para el producto -->
                         <div class="carousel slide" data-ride="carousel">
-                            <div id="carouselExampleFade{{producto.id}}" class="carousel slide carousel-fade"
-                                data-ride="carousel">
+                            <div id="carouselExampleFade{{producto.id}}" class="carousel slide carousel-fade" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img [src]="producto.imagen1" class="d-block w-100" alt="...">
@@ -147,41 +137,46 @@
                                         <img [src]="producto.imagen3" class="d-block w-100" alt="...">
                                     </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleFade{{producto.id}}"
-                                    role="button" data-slide="prev">
+                                <a class="carousel-control-prev" href="#carouselExampleFade{{producto.id}}" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselExampleFade{{producto.id}}"
-                                    role="button" data-slide="next">
+                                <a class="carousel-control-next" href="#carouselExampleFade{{producto.id}}" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
 
+
                             <!-- <img class="card-img-top" [src]="producto.imagen1" alt="Card image cap"> -->
-                            <div class="card-body">
-                                <h5 class="card-title text-center">{{producto.marca}} {{producto.modelo}}</h5>
-                                <p class="card-text text-center"><span class="negrita">Categoria:
-                                    </span>{{producto.categoria}}<span class="negrita">Resolución:
-                                    </span>{{producto.resolucion}}<span class="negrita">Iso:
-                                    </span>{{producto.iso}}<br><span class="negrita">Peso:
-                                    </span>{{producto.peso}}<span class="negrita">Focal: </span>{{producto.focal}}<span
-                                        class="negrita">Altura: </span>{{producto.altura}}</p>
-                                <p class="card-text text-center"><span class="negrita">Precio: </span><small
-                                        class="precioText">{{producto.precio}}€</small>
-                                </p>
-                                <button class="btn btn-outline-primary"
-                                    (click)="enviarProducto(producto)">Comprar</button>
+                            <div class="text-center">
+                                <h5>{{producto.marca}} {{producto.modelo}}</h5>
+                                <p>Ver + ></p>
+                                <!--  <p class="caracteristica">Resolución:
+                                    <span>{{producto.resolucion}}</span></p>
+                                <p class="caracteristica">Iso:
+                                    <span>{{producto.iso}}</span></p>
+                                <p class="caracteristica">Peso:
+                                    <span>{{producto.peso}}</span></p>
+                                <p class="caracteristica">Focal:
+                                    <span>{{producto.focal}}</span></p>
+                                <p class="caracteristica">Altura:
+                                    <span>{{producto.altura}}</span></p> -->
+
+                                <p class="precio">Precio: {{producto.precio}}€</p>
+
+                                <button class="btn boton-primario" (click)="enviarProducto(producto)">Comprar</button>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <pagination-controls class="pagination" id="listing_pagination" maxSize="4" directionalLinks="true"
-                (pageChange)="page = $event"></pagination-controls>
-        </div>
+
 
     </div>
+    <div>
+        <pagination-controls class="pagination" id="listing_pagination" maxSize="4" directionalLinks="true" (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

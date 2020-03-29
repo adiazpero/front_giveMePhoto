@@ -1,14 +1,12 @@
-.pagina {
-    margin-top: 4em;
+/* FILTRO */
+
+.container-fluid {
+    padding-top: 150px;
     padding-bottom: 6rem;
 }
 
-
-/* FILTRO */
-
 .filtro {
-    width: 300px;
-    height: 1400px;
+    width: 100%;
     background-color: rgb(212, 212, 212);
     margin: 0.8em;
     border-radius: 10px;
@@ -27,9 +25,10 @@
     margin-left: 1em;
 }
 
-span {
+
+/* span {
     margin-left: 1em;
-}
+} */
 
 .filtro .filtros,
 .filtros li {
@@ -54,52 +53,44 @@ span {
 
 /* TITULO SECCION */
 
+
+/* 
 .tituloseccion {
     color: rgb(51, 48, 48);
     margin: 1em 0 0.1em 1em;
-}
+} */
 
 
 /* PRODUCTOS */
 
-.row {
-    padding-left: 3em;
-}
-
-.card {
-    width: 530px;
-    height: 420px;
-    margin: 1em;
-}
-
-.card-body {
-    padding: 0.25em;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    margin: 0.5em auto 0 auto;
-}
-
-.card .negrita {
-    font-weight: bold;
-}
-
-.card .text-danger {
-    font-size: 1.2em;
-    font-weight: bold;
+.card-producto {
+    padding: 40px;
 }
 
 .precioText {
     font-size: 1.5em;
 }
 
-.btn {
-    margin-left: 210px;
+.precio {
+    font-weight: bold;
+    text-align: center;
 }
 
-.pagination {
-    margin: 1.5em;
-    margin-left: 750px;
+.boton-primario {
+    background-color: transparent;
+    border: 1px solid #212122;
+    color: #212122;
+    padding: 10px 30px;
+    border-radius: 0!important;
 }
+
+.boton-primario:hover {
+    background-color: #212122;
+    border: 1px solid #212122;
+    color: #fff
+}
+
+
+/* .pagination {
+    margin-left: 750px;
+} */
