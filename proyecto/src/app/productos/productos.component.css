@@ -5,30 +5,27 @@
     padding-bottom: 6rem;
 }
 
+.filtro-column {
+    background-color: rgb(247, 243, 243);
+}
+
 .filtro {
-    width: 100%;
-    background-color: rgb(250, 248, 248);
-    margin: 0.8em;
-    margin-top: 20px;
+    margin-left: 20px;
+    margin-top: 50px;
     color: black;
 }
 
-.filtro h3 {
-    padding-top: 50px;
+.titulofiltro {
+    font-size: 1.2rem;
+}
+
+.filtro h4 {
+    margin: 20px;
 }
 
 .filtro h2 {
     text-align: center;
 }
-
-.titulofiltro {
-    margin-left: 1em;
-}
-
-
-/* span {
-    margin-left: 1em;
-} */
 
 .filtros {
     list-style-type: none;
@@ -41,13 +38,14 @@
 }
 
 .filtro .filtros .tituloLi {
-    font-size: 1.3em;
+    font-size: 1em;
     list-style: none;
 }
 
-.filtro .filtros input {
+
+/* .filtro .filtros input {
     margin-bottom: 1em;
-}
+} */
 
 .filtro .filtros .range-slider {
     margin-left: -4em;
@@ -94,12 +92,64 @@
     color: #fff
 }
 
-i{
+i {
     margin-left: 0.5em;
     cursor: pointer;
     transition: 0.5s;
 }
 
-i:hover{
+i:hover {
     transform: rotate(90deg);
+}
+
+.contenedor {
+    transition: 5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor .titulo {
+    position: absolute;
+    top: 0;
+    left: 0em;
+    text-align: center;
+    padding-top: 25%;
+    font-size: 150%;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: #00000000;
+    transition: 5s;
+}
+
+.contenedor:hover .titulo {
+    background-color: #000000b7;
+}
+
+.contenedor .titulo {
+    margin-left: -30em;
+    transition: 1s;
+    z-index: 1;
+}
+
+.contenedor:hover .titulo {
+    margin-left: 0em;
+}
+
+@media(max-width:1003px) {
+    .filtro {
+        margin-left: 10px;
+    }
+    .titulofiltro {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:426px) {
+    .filtro {
+        margin-left: 40px;
+    }
+    .titulofiltro {
+        font-size: 1.5rem;
+    }
 }

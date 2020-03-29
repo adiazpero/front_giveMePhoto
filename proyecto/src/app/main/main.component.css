@@ -20,7 +20,7 @@ p {
     padding: 0px 10px;
 }
 
-#blog {
+.sectiongrey {
     background-color: #f6f6f6;
 }
 
@@ -62,7 +62,7 @@ p {
     font-weight: 600;
 }
 
-.no-result{
+.no-result {
     margin-top: 1em;
     font-size: 1.5em;
     font-weight: bolder;

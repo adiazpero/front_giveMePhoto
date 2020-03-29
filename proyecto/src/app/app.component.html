@@ -4,8 +4,7 @@
 
     <a class="navbar-brand logo" href="#"><i class="fas fa-camera-retro"></i></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -16,8 +15,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle productos" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
+                <a class="nav-link dropdown-toggle productos" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#" [routerLink]="['/productos']">Ver Todos</a>
@@ -35,46 +33,33 @@
             <li class="nav-item">
                 <a class="nav-link" href="#" [routerLink]="['/blog']">Blog</a>
             </li>
-
         </ul>
+
         <form class="form-inline my-2 my-lg-0 buscador">
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
 
         <div class="iconos">
-
             <ul class="navbar-nav mr-auto">
-
                 <li class="nav-item dropdown">
-                    <a class="nav-link icon" href="#" [routerLink]="['/carrito']"><i
-                            class=" fas fa-shopping-cart"></i></a>
+                    <a class="nav-link icon" href="#" [routerLink]="['/carrito']"><i class=" fas fa-shopping-cart"></i></a>
                 </li>
 
-
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle icon" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
+                    <a class="nav-link dropdown-toggle icon" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
                     </a>
 
-
-
-
                     <div class="dropdown-menu perfil" aria-labelledby="navbarDropdown">
-
                         <a class="dropdown-item" href="#" [routerLink]="['/registro']">Registrate/Login</a>
                         <a class="dropdown-item" href="#" [routerLink]="['/user']">Mi perfil</a>
-                        <a class="dropdown-item" href="#" [routerLink]="['/user']"
-                            (click)="manejarCerrarSesion()">Cerrar sesión</a>
+                        <a class="dropdown-item" href="#" [routerLink]="['/user']" (click)="manejarCerrarSesion()">Cerrar sesión</a>
                     </div>
-
                 </li>
-
-
-
             </ul>
         </div>
     </div>
+
     <div *ngFor="let item of usuario">
         <p>Hola {{item.nombre}}</p>
     </div>
@@ -106,14 +91,6 @@
                 <li></li>
             </ul>
         </div>
-
-        <!-- <div class="col-12 col-md-6">
-            <ul>
-                <li>ghghghg</li>
-                <li>gggggg</li>
-                <li></li>
-            </ul>
-        </div> -->
     </div>
 
 
@@ -124,10 +101,3 @@
     </div>
 
 </footer>
-
-
-<!-- 
-<div class="iconos">
-    <a href="#"><i class="far fa-user-circle"></i></a>
-    <a href=""><i class="fas fa-shopping-cart"></i></a>
-</div> -->

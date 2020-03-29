@@ -11,19 +11,3 @@ function launchNavbar() {
     });
 
 }
-
-
-
-/* var busqueda = document.querySelector('#search');
-busqueda.addEventListener('keyup', buscarTarea);
-
-function buscarTarea(e) {
-    var key = e.keyCode;
-    if (key == 13) {
-        var buscarPalabra = e.target.value;
-        var listaBusqueda = listaTareas.filter(tarea => tarea.titulo.toLowerCase().includes(buscarPalabra.toLowerCase()));
-
-        limpiarPantalla();
-        pintarTareas(listaBusqueda);
-    }
-} */
