@@ -12,9 +12,16 @@ export class UserComponent implements OnInit {
 
   usuario: any;
   pedidos: any;
+  productos: any;
+  pedidoCurso: any;
   cursos: any;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+
+  constructor(private usuarioService: UsuarioService, private router: Router) {
+    this.pedidos = [];
+    this.pedidoCurso = [];
+    this.productos = [];
+  }
 
   ngOnInit() {
     //recuperamos usuarios 
@@ -22,18 +29,32 @@ export class UserComponent implements OnInit {
       this.usuario = JSON.parse(localStorage.getItem('usuario'));
     }
 
-    /*     this.usuarioService.getUserById()
-          .then(response => {
-            this.usuario = response;
-          })
-          .catch(err => {
-            console.log(err)
-          }); */
 
     //recuperamos pedidos de usuario
     this.usuarioService.getPedidosUser()
       .then(response => {
-        this.pedidos = response;
+        if (response['error']) {
+          localStorage.removeItem('token');
+          confirm('Tu sesion ha terminado, logueate de nuevo');
+          window.location.reload();
+          localStorage.removeItem('token');
+          localStorage.removeItem('usuario');
+          this.router.navigate(['/registro']);
+        } else {
+          this.pedidos = response;
+          /* console.log(this.pedidos) */
+          for (let i = 0; i < this.pedidos.length; i++)
+            this.productos = this.pedidos[i].productos;
+
+          /*           for (let productos of this.pedidos) {
+                      this.productos = productos;
+                    } */
+          console.log(this.pedidos)
+          console.log(this.productos)
+
+        }
+
+
       })
       .catch(err => {
         console.log(err)
@@ -42,8 +63,7 @@ export class UserComponent implements OnInit {
     //recuperamos los cursos
     this.usuarioService.getAllDetalleCurso()
       .then(response => {
-        this.cursos = response;
-        console.log(this.cursos)
+        this.pedidoCurso = response;
       })
       .catch(err => {
         console.log(err)

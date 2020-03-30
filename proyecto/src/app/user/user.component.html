@@ -41,12 +41,12 @@
                         <th scope="col ">Total Pedido</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let producto of productos">
                     <tr>
                         <td>{{pedido.fechapedido | date: 'dd-MM-yyyy'}}</td>
-                        <td>{{pedido.productos}}</td>
+                        <td>{{producto.marca}}</td>
                         <td>Entregado</td>
-                        <td>{{pedido.precio_total}}€</td>
+                        <td>{{producto.precio}}€</td>
                     </tr>
                 </tbody>
             </table>
@@ -56,7 +56,7 @@
         <!--  -->
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab"
-            *ngFor="let curso of cursos">
+            >
             <br>
             <h2>Historial de cursos realizados<i class="fas fa-lightbulb "></i></h2>
             <table class="table ">
@@ -68,12 +68,12 @@
                         <th scope="col ">Total Pedido</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let curso of pedidoCurso">
                     <tr>
                         <td>{{curso.fecha_compra | date: 'dd-MM-yyyy'}}</td>
-                        <td>{{curso.cursos}}</td>
+                        <td>{{curso.titulo}}</td>
                         <td>Realizado</td>
-                        <td>{{curso.precio_total}}€</td>
+                        <td>{{curso.precio}}€</td>
                     </tr>
                 </tbody>
             </table>
