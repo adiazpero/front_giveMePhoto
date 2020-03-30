@@ -20,6 +20,7 @@ export class ProductosComponent implements OnInit {
   mostrarFiltroAccesorios: boolean;
   mostrarFiltroPrecio: boolean;
   mostrarDeshacerFiltro: boolean;
+  mostrarCaracteristicas: boolean;
 
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router, private carritoService: CarritoService) {
@@ -31,6 +32,7 @@ export class ProductosComponent implements OnInit {
     this.mostrarFiltroAccesorios = false;
     this.mostrarFiltroPrecio = false;
     this.mostrarDeshacerFiltro = false;
+    this.mostrarCaracteristicas = false;
 
   }
 
@@ -220,6 +222,14 @@ export class ProductosComponent implements OnInit {
       this.mostrarFiltroPrecio = false;
     }
 
+  }
+
+  manejarMostrarCaracteristicas() {
+    if (this.mostrarCaracteristicas != true) {
+      this.mostrarCaracteristicas = true;
+    } else {
+      this.mostrarCaracteristicas = false;
+    }
   }
 
 
