@@ -224,13 +224,13 @@ export class ProductosComponent implements OnInit {
 
   }
 
-  manejarMostrarCaracteristicas() {
-    if (this.mostrarCaracteristicas != true) {
-      this.mostrarCaracteristicas = true;
-    } else {
-      this.mostrarCaracteristicas = false;
-    }
-  }
+  /*  manejarMostrarCaracteristicas() {
+     if (this.mostrarCaracteristicas != true) {
+       this.mostrarCaracteristicas = true;
+     } else {
+       this.mostrarCaracteristicas = false;
+     }
+   } */
 
 
 
