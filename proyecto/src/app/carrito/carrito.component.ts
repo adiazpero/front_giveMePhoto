@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CarritoService } from '../carrito.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -21,7 +22,7 @@ export class CarritoComponent implements OnInit {
   mostrarProductos: boolean;
   mostrarMsgPedidoRealizado: boolean;
 
-  constructor(private carritoService: CarritoService) {
+  constructor(private carritoService: CarritoService, private router: Router) {
     this.listaPedido = [];
     this.arrfkUsuario = [];
     this.mostrarConfirmarPedido = false;
@@ -54,6 +55,13 @@ export class CarritoComponent implements OnInit {
       this.mostrarProductos = true;
     } else {
       this.mostrarNoProductos = true;
+
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+    });
     }
 
   }

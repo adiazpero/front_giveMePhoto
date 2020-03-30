@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from '../cursos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-curso',
@@ -11,7 +11,7 @@ export class DetalleCursoComponent implements OnInit {
 
   cursos: any[];
 
-  constructor(private cursosService: CursosService, private activatedRoute: ActivatedRoute) { }
+  constructor(private cursosService: CursosService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
 
 
@@ -20,6 +20,13 @@ export class DetalleCursoComponent implements OnInit {
       this.cursos = await this.cursosService.getByNivel(params.nivel);
       console.log(this.cursos)
     })
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
   }
 
 

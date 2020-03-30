@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { CursosService } from '../cursos.service';
 
 
@@ -18,6 +18,13 @@ export class CursosComponent implements OnInit {
 
   ngOnInit() {
 
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
+
   }
 
   manejarClickIniciacion() {
@@ -32,6 +39,9 @@ export class CursosComponent implements OnInit {
   manejarClickAvanzado() {
     this.router.navigate(['/cursos/avanzado'])
   }
+
+  
+  
 
 
 }

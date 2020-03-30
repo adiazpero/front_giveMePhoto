@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -27,6 +27,13 @@ export class UserComponent implements OnInit {
     //recuperamos usuarios 
     if (localStorage.getItem('usuario')) {
       this.usuario = JSON.parse(localStorage.getItem('usuario'));
+
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+          return;
+        }
+        window.scrollTo(0, 0)
+      });
     }
 
 
@@ -35,7 +42,7 @@ export class UserComponent implements OnInit {
       .then(response => {
         if (response['error']) {
           localStorage.removeItem('token');
-          confirm('Tu sesion ha terminado, logueate de nuevo');
+          confirm('Tu sesion ha caducado, logueate de nuevo');
           window.location.reload();
           localStorage.removeItem('token');
           localStorage.removeItem('usuario');
