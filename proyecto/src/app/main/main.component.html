@@ -1,7 +1,7 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="../assets/images/slider/slider20.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-item active slider">
+            <img src="../assets/images/slider/imagen8.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
 </div>
@@ -12,73 +12,111 @@
 <section class="sectiongrey">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <img src="../../assets/images/main.jpg" alt="">
+            <div class="col-12 text-center">
+                <h2>
+                    <span class="ion-minus"></span>Productos<span class="ion-minus"></span>
+                </h2>
             </div>
             <div class="col-12 col-md-6">
+                <img src="../../assets/images/home/main.jpg" alt="">
+            </div>
+            <div class="col-12 col-md-6 section-productos">
+
                 <h3>¿Qué cámara me compro?</h3>
-                <p>La mejor cámara de fotos que puedes comprar es aquella que más se adapta a tus necesidades fotográficas y a tu presupuesto. Puede que solo estés pensando en comprar cámaras de fotos baratas o, por contra, quieras comprarte una cámara fotográfica
-                    digital de gama alta pero en cualquier caso, es muy importante que tengas en cuenta la siguiente información a la hora de elegir tu máquina de fotos.
+                <p class="texto">La mejor cámara de fotos que puedes comprar es aquella que más se adapta a tus necesidades fotográficas y a tu presupuesto. Puede que solo estés pensando en comprar cámaras de fotos baratas o, por contra, quieras comprarte una cámara fotográfica
+                    digital de gama alta pero en cualquier caso, es muy importante que tengas en cuenta
+                    <!-- la siguiente información a la hora de elegir tu máquina de fotos. -->
                 </p>
                 <button class="btn boton-primario" [routerLink]="['/productos']">Ir a Productos</button>
-                <p>Para en un gran fotográfo, vas a necesitar una buena cámara. A la hora de comprar, hoy día hay tantas opciones que muchas veces complican las cosas para quien no es experto. ¿Mientras más megapixeles la cámara es mejor? No necesariamente…
-                    Aprende todo lo que necesitas saber en este curso gratis.
-                </p>
+
             </div>
         </div>
     </div>
 </section>
 
-<div class="tabla container">
-    <h2 class="text-center">¿Necesitas ayuda para encontrar lo que necesitas?<br> Realiza el cuestionario y te ayudaremos
-    </h2>
-    <table class="table text-center">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Técnica naturaleza</th>
-                <th scope="col">Técnica nocturna</th>
-                <th scope="col">Técnica retrato/estudio</th>
-                <th scope="col">Técnica macro</th>
-            </tr>
-        </thead>
+<!-- Section cuestionario -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>¿Necesitas ayuda para encontrar tu cámara?</h2>
+                <p>Utiliza nuestro filtro para ajustar tu búsqueda</p>
+            </div>
+            <div class="col-12">
+                <table class="table text-center">
+                    <!-- <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Técnica naturaleza</th>
+                    <th scope="col">Técnica nocturna</th>
+                    <th scope="col">Técnica retrato/estudio</th>
+                    <th scope="col">Técnica macro</th>
+                </tr>
+            </thead> -->
 
-        <tbody>
-            <tr>
-                <th scope="row">Tecnica fotográfica</th>
-                <td><input id="tecnicanaturaleza" value="tecnicanaturaleza" type="checkbox" (change)="manejarTecnicaNaturaleza($event)"></td>
-                <td><input id="tecnicanocturna" value="tecnicanocturna" type="checkbox" (change)="manejarTecnicaNocturna($event)"></td>
-                <td><input id="tecnicaretrato" value="tecnicaretrato" type="checkbox" (change)="manejarTecnicaRetrato($event)"></td>
-                <td><input id="tecnicamacro" value="tecnicamacro" type="checkbox" (change)="manejarTecnicaMacro($event)"></td>
-            </tr>
-        </tbody>
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">10 - 250€</th>
-                <th scope="col">275€ - 500€</th>
-                <th scope="col">550€ - 1000€</th>
-                <th scope="col">1000€ - 2000€</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Presupuesto</th>
-                <td><input type="radio" name="radio" value="0" (change)="manejarCheckPrecio($event)"></td>
-                <td><input type="radio" name="radio" value="1" (change)="manejarCheckPrecio($event)"></td>
-                <td><input type="radio" name="radio" value="2" (change)="manejarCheckPrecio($event)"></td>
-                <td><input type="radio" name="radio" value="3" (change)="manejarCheckPrecio($event)"></td>
-            </tr>
-        </tbody>
-    </table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Tecnica fotográfica</th>
+                            <td><input id="tecnicanaturaleza" value="tecnicanaturaleza" type="checkbox" (change)="manejarTecnicaNaturaleza($event)">Naturaleza</td>
+                            <td><input id="tecnicanocturna" value="tecnicanocturna" type="checkbox" (change)="manejarTecnicaNocturna($event)">Nocturna</td>
+                            <td><input id="tecnicaretrato" value="tecnicaretrato" type="checkbox" (change)="manejarTecnicaRetrato($event)">Retrato/estudio</td>
+                            <td><input id="tecnicamacro" value="tecnicamacro" type="checkbox" (change)="manejarTecnicaMacro($event)">Macro</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Presupuesto</th>
+                            <td><input type="radio" name="radio" value="0" (change)="manejarCheckPrecio($event)">10-250€</td>
+                            <td><input type="radio" name="radio" value="1" (change)="manejarCheckPrecio($event)">275€-500€</td>
+                            <td><input type="radio" name="radio" value="2" (change)="manejarCheckPrecio($event)">550€-1000€</td>
+                            <td><input type="radio" name="radio" value="3" (change)="manejarCheckPrecio($event)">1000€-2000€</td>
+                        </tr>
+                    </tbody>
+                    <!-- <thead>
+                 <tr>
+                    <th scope="col"></th>
+                    <th scope="col">10 - 250€</th>
+                    <th scope="col">275€ - 500€</th>
+                    <th scope="col">550€ - 1000€</th>
+                    <th scope="col">1000€ - 2000€</th>
+                </tr> 
+            </thead> -->
 
-    <input value="Ver resultado" type="button" class="btn btn-dark btn-lg btn-block" (click)="manejarResultado()">
-    <p *ngIf="mostrarNoResultados" class="no-result text-center">No hay ningún resultado para esta búsqueda</p>
-</div>
+                </table>
+
+                <input value="Ver resultado" type="button" class="btn btn-dark btn-lg btn-block" (click)="manejarResultado()">
+                <p *ngIf="mostrarNoResultados" class="no-result text-center">No hay ningún resultado para esta búsqueda</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-<!-- Section Blog -->
+<!-- Section Cursos -->
 <section class="sectiongrey">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>
+                    <span class="ion-minus"></span>Cursos<span class="ion-minus"></span>
+                </h2>
+            </div>
+            <div class="col-12 col-md-6 section-cursos">
+
+                <h3>Captura los mejores momentos</h3>
+                <p class="texto">Fotografiar es algo más que hacer una buena foto. En los cursos aprenderás a seleccionar y secuenciar tus fotografías, a contar historias con tus imágenes y a expresarte a través de la cámara. Conocerás personas que comparten tu pasión
+                    por la fotografía, en un entorno especialmente pensado para ayudarte a desarrollar tu creatividad.
+                </p>
+                <button class="btn boton-primario" [routerLink]="['/cursos']">Ir a Cursos</button>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="../../assets/images/home/pies.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Section Blog -->
+<section class="section-blog">
     <div class="container">
 
         <div class="row">
@@ -86,7 +124,7 @@
                 <h2>
                     <span class="ion-minus"></span>Blog Posts<span class="ion-minus"></span>
                 </h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus </p><br>
+                <p>Emociones, sensaciones, motivaciones para escribir, son algunas de las características de este blog. Que seguramente te servirán de inspiración, y te animarán a llevar tu cámara al hombro allí hacía donde te dirijas. </p><br>
             </div>
         </div>
 
@@ -108,9 +146,11 @@
 
                             <div class="col-12 col-md-4">
                                 <div class="card text-center">
-                                    <img class="card-img-top" src="https://images.pexels.com/photos/39811/pexels-photo-39811.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
+                                    <div>
+                                        <img class="card-img-top" src="../../assets/images/blog/foto.png" alt="" width="100%">
+                                    </div>
                                     <div class="card-block">
-                                        <h4 class="card-title">21 lugares recomendados por fotógrafos para visitar en primavera
+                                        <h4 class="card-title">21 lugares recomendados por fotógrafos
                                         </h4>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
                                         <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir leyendo</button>
@@ -121,7 +161,9 @@
 
                             <div class="col-12 col-md-4">
                                 <div class="card text-center">
-                                    <img class="card-img-top" src="https://images.pexels.com/photos/129105/pexels-photo-129105.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
+                                    <div>
+                                        <img class="card-img-top" src="../../assets/images/blog/foto2.jpg" alt="" width="100%">
+                                    </div>
                                     <div class="card-block">
                                         <h4 class="card-title">Post Title</h4>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
@@ -134,7 +176,7 @@
 
                             <div class="col-12 col-md-4">
                                 <div class="card text-center">
-                                    <img class="card-img-top" src="https://images.pexels.com/photos/129441/pexels-photo-129441.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" width="100%">
+                                    <img class="card-img-top" src="../../assets/images/blog/foto3.jpg" alt="" width="100%">
                                     <div class="card-block">
                                         <h4 class="card-title">Post Title</h4>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
