@@ -42,15 +42,16 @@ export class UserComponent implements OnInit {
           this.router.navigate(['/registro']);
         } else {
           this.pedidos = response;
+          console.log(this.pedidos)
+
           /* console.log(this.pedidos) */
-          for (let i = 0; i < this.pedidos.length; i++)
-            this.productos = this.pedidos[i].productos;
+          /*           for (let i = 0; i < this.pedidos.length; i++)
+                      this.productos = this.pedidos[i].productos; */
 
           /*           for (let productos of this.pedidos) {
                       this.productos = productos;
                     } */
-          console.log(this.pedidos)
-          console.log(this.productos)
+          /*           console.log(this.productos) */
 
         }
 

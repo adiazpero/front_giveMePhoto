@@ -28,8 +28,7 @@
         </div>
 
         <!--    Pestaña pedidos -->
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"
-            *ngFor="let pedido of pedidos">
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <br>
             <h2>Historial de pedidos<i class=" fas fa-box-open "></i></h2>
             <table class="table ">
@@ -41,13 +40,15 @@
                         <th scope="col ">Total Pedido</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let producto of productos">
-                    <tr>
-                        <td>{{pedido.fechapedido | date: 'dd-MM-yyyy'}}</td>
-                        <td>{{producto.marca}}</td>
-                        <td>Entregado</td>
-                        <td>{{producto.precio}}€</td>
-                    </tr>
+                <tbody>
+                    <ng-container *ngFor="let pedido of pedidos">
+                        <tr *ngFor="let producto of pedido.productos">
+                            <td>{{pedido.fechapedido | date: 'dd-MM-yyyy'}}</td>
+                            <td>{{producto.marca}} {{producto.modelo}}</td>
+                            <td>Entregado</td>
+                            <td>{{producto.precio}}€</td>
+                        </tr>
+                    </ng-container>
                 </tbody>
             </table>
         </div>
@@ -55,8 +56,7 @@
 
         <!--  -->
 
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab"
-            >
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab">
             <br>
             <h2>Historial de cursos realizados<i class="fas fa-lightbulb "></i></h2>
             <table class="table ">
